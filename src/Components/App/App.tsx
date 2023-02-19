@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react"
 import "./App.scss" 
 import  fetchData  from "../../fetchapis"
+import Header from "../Header/Header"
+
+
 
 
 
@@ -21,6 +24,7 @@ function App() {
 
   return (
     <main className="App">
+      <Header></Header>
       <h1>Levies (Logo goes here)</h1>
       {/* <Form ></Form>  this one will be functional with hooks*/}
 
