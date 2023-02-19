@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import "./App.scss" 
 import  fetchData  from "../../fetchapis"
+import Form from "../Form/Form.tsx"
 
 
 
@@ -22,6 +23,7 @@ function App() {
   return (
     <main className="App">
       <h1>Levies (Logo goes here)</h1>
+      <Form></Form>
       {/* <Form ></Form>  this one will be functional with hooks*/}
 
     </main>
