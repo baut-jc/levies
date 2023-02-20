@@ -1,0 +1,32 @@
+.title {
+    margin-top: 15px;
+    margin-right: 20px;
+    width: 150px;
+    color: #003459;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    height: 10vh
+}
+
+.link {
+    color: #003459;
+    text-decoration: underline;
+    margin-top: 28px;
+    margin-right: 10px;
+}
+
+.contain {
+    width: 80px;
+}
+
+.home-icon{
+    margin-left: -20px;
+    margin-top: -18px;
+    width: 100px;
+}
+
