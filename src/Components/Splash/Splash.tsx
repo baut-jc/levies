@@ -30,7 +30,7 @@ function Splash(): ReactElement {
 
     return (
       <main>
-        <h1 onClick={handleClick}>LOGO</h1>
+        <h1 onClick={handleClick}>This is splash</h1>
         {/* <button onClick={handleClick}>FORM</button> */}
         {/* <Form /> */}
       </main>

@@ -1,17 +1,21 @@
 import './Header.scss'
 import React from 'react'
 import { Link } from "react-router-dom"
+import HomeIcon from '../../Assets/49921-home.gif'
 
 
 const Header = () => {
-    return(
+    return (
         <div className='header'>
-            {/* <Link path='/'>
-            <img src=''></img>
-            </Link> */}
-            <h2>This is a header</h2>
-            {/* <Link path=''>MAP</Link> */}
-            {/* <Link path=''>STATIONS NEAR ME</Link> */}
+            <div className='contain'>
+                <Link to='/'>
+                    <img src={HomeIcon} className='home-icon'></img>
+                </Link>
+            </div>
+            <h1 className='title'>L'EVies</h1>
+            <Link to='/map' className='link'>MAP</Link>
+            <Link to='/form' className='link'>FORM</Link>
+            <Link to='/stations' className='link'>STATIONS NEAR ME</Link>
         </div>
     )
 }
