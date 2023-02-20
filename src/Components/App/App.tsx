@@ -3,7 +3,7 @@ import "./App.scss"
 import fetchData from "../../fetchapis"
 import Header from "../Header/Header.tsx"
 import { BrowserRouter, Route } from "react-router-dom"
-
+import Form from "../Form/Form.tsx"
 
 
 
@@ -28,6 +28,7 @@ function App() {
     <main className="App">
       <Header></Header>
       <h1>Levies (Logo goes here)</h1>
+      <Form></Form>
       {/* <Form ></Form>  this one will be functional with hooks*/}
     </main>
 
