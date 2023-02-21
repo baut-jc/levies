@@ -1,6 +1,30 @@
-import React, { ReactElement } from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import Form from '../Form/Form.tsx'
+import WebLogo from '../../Assets/logo.png'
+import './Splash.scss'
 
-function Splash(): ReactElement {
+function Splash() {
+  const [showForm, setShowForm] = useState(false)
+
+  return (
+    <main className='splash-page'>
+        {showForm ? (
+          <div>
+            <img src={ WebLogo } className='web-logo'/>
+            <Form />
+          </div>
+        ): 
+          <div>
+            <img src={ WebLogo } className='web-logo'/>
+            <button onClick={() => setShowForm(true)}>Where's the Plug?</button>
+          </div>
+            } 
+    </main>
+  )
+  }
+  
+  export default Splash
   
   // const [count, setCount] = useState<number>(0)
   // --> import useEffect from React
@@ -16,25 +40,3 @@ function Splash(): ReactElement {
   // }
  
 // --> at click event handler
-  const renderForm = () => {
-    <div>
-      <p>should display the form</p>
-      <p>might Route with</p>
-    </div>
-  }
-
-  const handleClick = (e: MouseEvent) => {
-    e.preventDefault()
-    renderForm()
-  }
-
-    return (
-      <main>
-        <h1 onClick={handleClick}>This is splash</h1>
-        {/* <button onClick={handleClick}>FORM</button> */}
-        {/* <Form /> */}
-      </main>
-  )
-  }
-
-    export default Splash
