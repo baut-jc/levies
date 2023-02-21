@@ -7,6 +7,8 @@ function Station() {
   const [stationAdress, setStationAdress] = useState('')
   const [stationConnectorTypes, setStationConnectorTypes] = useState([])
   const [stationOperationHours, setStationOperationHours] = useState('')
+  const [stationLatitude, setStationLatitude] = useState('')
+  const [stationLongitude, setStationLongitude] = useState('')
 
   useEffect(() => {
     //Currently hardcoding 
@@ -16,6 +18,8 @@ function Station() {
       setStationAdress(data.alt_fuel_station.street_address)
       setStationConnectorTypes(data.alt_fuel_station.ev_connector_types)
       setStationOperationHours(data.alt_fuel_station.access_days_time)
+      setStationLatitude(data.alt_fuel_station.latitude)
+      setStationLongitude(data.alt_fuel_station.longitude)
     })
   },[])
   
