@@ -1,5 +1,7 @@
 import React, {useState} from "react"
 import "./Form.scss"
+import Header from "../Header/Header.tsx"
+
 
 function Form(){
 
@@ -22,6 +24,8 @@ function Form(){
   }
 
   return (
+    <>
+    <Header />
     <form>
       <label htmlFor="chargerType">Charger Type</label>
       <select name="chargerType" value={chargerTypeInput} onChange={ event => setChargerTypeInput(event.target.value)}>
@@ -41,6 +45,7 @@ function Form(){
       <input name="locations" placeholder="Zipcodes of Visiting Locations" value={locationsInput} onChange={ event => setLocationsInput(event.target.value)}></input>
       <button onClick={submitForm}>Plan Trip</button>
     </form>
+    </>
   )  
 }
 

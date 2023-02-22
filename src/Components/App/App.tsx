@@ -32,7 +32,6 @@ function App() {
   return (
     <main className="App">
       <Router>
-        <Header />
         <Routes>
           <Route path="/" element={<Splash/>}/>
           <Route path="/form" element={<Form/>}/>
