@@ -20,6 +20,7 @@ function App() {
   const [startPoint, setStartPoint] = useState('')
   const [endPoint, setEndPoint] = useState('')
   const [locations, setLocations] = useState([])
+  const [isSplashed, setIsSplashed] = useState(false)
 
   const renderInfo = () => {
     return <div></div>
@@ -29,18 +30,35 @@ function App() {
     fetchData().then(data => console.log(data))
   }, [])
 
+
   return (
-    <main className="App">
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Splash/>}/>
-          <Route path="/form" element={<Form/>}/>
-          {/* <Route path="/:id" element={<Station/>}/> */}
-        </Routes>
-      </Router>
+    <main className='App'>
+      {isSplashed ? (
+        <Router>
+          <Routes>
+           <Route path="/" element={<Header/>}/>
+           {/* <Route path="/:id" element={<Station/>}/> */}
+          </Routes>
+        </Router> 
+        ): 
+        <div>
+          <Splash />
+        </div>
+      }
     </main>
   )
+  // return (
+  //   <main className="App">
+  //     <Router>
+  //       <Splash />
+  //       <Routes>
+  //         <Route path="/" element={<Header/>}/>
+  //         <Route path="/form" element={<Form/>}/>
+  //         {/* <Route path="/:id" element={<Station/>}/> */}
+  //       </Routes>
+  //     </Router>
+  //   </main>
+  // )
 }
 
 export default App
