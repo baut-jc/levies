@@ -32,19 +32,14 @@ function App() {
 
 
   return (
-    <main className='App'>
-      {isSplashed ? (
-        <Router>
-          <Routes>
-           <Route path="/" element={<Header/>}/>
-           {/* <Route path="/:id" element={<Station/>}/> */}
-          </Routes>
-        </Router> 
-        ): 
-        <div>
-          <Splash />
-        </div>
-      }
+    <main className="App">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Splash/>}/>
+          <Route path="/form" element={<Form/>}/>
+          {/* <Route path="/:id" element={<Station/>}/> */}
+        </Routes>
+      </Router>
     </main>
   )
   // return (
