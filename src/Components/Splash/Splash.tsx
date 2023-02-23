@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import WebLogo from '../../Assets/logo.png'
 import './Splash.scss'
 
 export default function Splash() {
-  const [showForm, setShowForm] = useState(false)
 
   return (
     <main className='splash-page'>  
