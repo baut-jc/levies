@@ -1,15 +1,16 @@
+//@ts-ignore
 import React, {useState} from "react"
 import "./Form.scss"
-import Header from "../Header/Header.tsx"
+import Header from "../Header/Header"
 import { Link } from "react-router-dom"
 
 
 function Form(){
 
   const [chargerTypeInput, setChargerTypeInput] = useState('')
-  const [startPointInput, setStartPointInput] = useState('')
-  const [endPointInput, setEndPointInput] = useState('')
-  const [locationsInput, setLocationsInput] = useState('')
+  const [startPointInput, setStartPointInput] = useState<string>('')
+  const [endPointInput, setEndPointInput] = useState<string>('')
+  // const [locationsInput, setLocationsInput] = useState('')
 
   const submitForm = event => {
     // event.preventDefault()
@@ -21,7 +22,7 @@ function Form(){
     setChargerTypeInput('')
     setStartPointInput('')
     setEndPointInput('')
-    setLocationsInput('')
+
   }
 
   return (
@@ -43,7 +44,7 @@ function Form(){
       <label htmlFor="endPoint">End Point</label>
       <input name="endPoint" placeholder="Ending Zipcode" value={endPointInput} onChange={ event => setEndPointInput(event.target.value)}></input>
       <label htmlFor="locations">Locations</label>
-      <input name="locations" placeholder="Zipcodes of Visiting Locations" value={locationsInput} onChange={ event => setLocationsInput(event.target.value)}></input>
+      {/* <input name="locations" placeholder="Zipcodes of Visiting Locations" value={locationsInput} onChange={ event => setLocationsInput(event.target.value)}></input> */}
       <Link to='/map' className='link'>
         <button onClick={submitForm}>Plan Trip</button>
       </Link>
