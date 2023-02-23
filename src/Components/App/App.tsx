@@ -6,10 +6,12 @@ import {
   BrowserRouter as Router,
   Routes,
   Route
+  // Switch
 } from 'react-router-dom'
 import Form from "../Form/Form.tsx"
 import Splash from "../Splash/Splash.tsx"
 import Station from "../Station/Station.tsx"
+import Map from '../Map/Map.tsx'
 
 
 
@@ -20,6 +22,8 @@ function App() {
   const [startPoint, setStartPoint] = useState('')
   const [endPoint, setEndPoint] = useState('')
   const [locations, setLocations] = useState([])
+  const [isSplashed, setIsSplashed] = useState(false)
+  const [stations, setStations] = useState([])
 
   const renderInfo = () => {
     return <div></div>
@@ -31,13 +35,14 @@ function App() {
 
   return (
     <main className="App">
-      <Router>
+      {/* <Router> */}
         <Routes>
           <Route path="/" element={<Splash/>}/>
           <Route path="/form" element={<Form/>}/>
           {/* <Route path="/:id" element={<Station/>}/> */}
+          <Route path="/map" element={<Map/>}/>
         </Routes>
-      </Router>
+      {/* </Router> */}
     </main>
   )
 }
