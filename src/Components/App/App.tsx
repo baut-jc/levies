@@ -18,12 +18,12 @@ import Map from '../Map/Map.tsx'
 
 function App() {
 
-  const [vehicleType, setVehicleType] = useState('')
-  const [startPoint, setStartPoint] = useState('')
-  const [endPoint, setEndPoint] = useState('')
-  const [locations, setLocations] = useState([])
-  const [isSplashed, setIsSplashed] = useState(false)
-  const [stations, setStations] = useState([])
+  const [vehicleType, setVehicleType] = useState<string>('')
+  const [startPoint, setStartPoint] = useState<string>('')
+  const [endPoint, setEndPoint] = useState<string>('')
+  const [locations, setLocations] = useState<string[]>([])
+  const [isSplashed, setIsSplashed] = useState<boolean>(false)
+  const [stations, setStations] = useState<string[]>([])
 
   const renderInfo = () => {
     return <div></div>
