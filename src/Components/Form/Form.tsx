@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import "./Form.scss"
 import Header from "../Header/Header.tsx"
+import { Link } from "react-router-dom"
 
 
 function Form(){
@@ -11,7 +12,7 @@ function Form(){
   const [locationsInput, setLocationsInput] = useState('')
 
   const submitForm = event => {
-    event.preventDefault()
+    // event.preventDefault()
     console.log("does something eventually")
     clearInputs()
   }
@@ -43,7 +44,9 @@ function Form(){
       <input name="endPoint" placeholder="Ending Zipcode" value={endPointInput} onChange={ event => setEndPointInput(event.target.value)}></input>
       <label htmlFor="locations">Locations</label>
       <input name="locations" placeholder="Zipcodes of Visiting Locations" value={locationsInput} onChange={ event => setLocationsInput(event.target.value)}></input>
-      <button onClick={submitForm}>Plan Trip</button>
+      <Link to='/map' className='link'>
+        <button onClick={submitForm}>Plan Trip</button>
+      </Link>
     </form>
     </>
   )  
