@@ -20,7 +20,11 @@ export default function Map({renderItineraryStations}) {
   const grabStationIds = 
     stations.map(station => {
       return (
-        <Station id={station.id} renderItineraryStations={renderItineraryStations}/>
+        <Station 
+        id={station.id} 
+        key={station.id}
+        renderItineraryStations={renderItineraryStations}
+        />
       )})
   
   return (

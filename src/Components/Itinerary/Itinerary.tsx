@@ -5,7 +5,10 @@ import Station from '../Station/Station.tsx'
 function Itinerary({itineraryStations}) {
   console.log(itineraryStations)
   const displayItinerary = itineraryStations.map(stationID => {
-    return <Station id={stationID}/>
+    return <Station 
+    id={stationID}
+    key={stationID}
+    />
   })
 
   return (
