@@ -35,6 +35,13 @@ function App() {
     setItineraryStations([...itineraryStations, newItineraryStations])
   }
 
+  const deleteItineraryStation = id => {
+    console.log('delete runs')
+    const filteredItinerary = itineraryStations.filter(stationID => stationID != id)
+    console.log(filteredItinerary)
+    setItineraryStations(filteredItinerary)
+  }
+
   useEffect(() => {
     fetchData().then(data => console.log(data))
   }, [])
@@ -47,7 +54,7 @@ function App() {
           <Route path="/form" element={<Form/>}/>
           {/* <Route path="/:id" element={<Station/>}/> */}
           <Route path="/map" element={<Map renderItineraryStations={renderItineraryStations}/>}/>
-          <Route path="/stations" element={<Itinerary itineraryStations={itineraryStations} />}/>
+          <Route path="/stations" element={<Itinerary itineraryStations={itineraryStations} deleteItineraryStation={deleteItineraryStation}/>}/>
         </Routes>
       {/* </Router> */}
     </main>

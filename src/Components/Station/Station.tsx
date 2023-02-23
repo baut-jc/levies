@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
+import { useLocation } from "react-router-dom"
 import { fetchSingleStation } from "../../fetchapis"
 
-function Station({id, renderItineraryStations}) {
+function Station({id, renderItineraryStations, deleteItineraryStation}) {
 
   const [stationID, setStationID] = useState<number | null>(null)
   const [stationName, setStationName] = useState('')
@@ -12,7 +13,6 @@ function Station({id, renderItineraryStations}) {
   const [stationLongitude, setStationLongitude] = useState('')
 
   useEffect(() => {
-    //Currently hardcoding 
     fetchSingleStation(id)
     .then(data=>{
       setStationID(id)
@@ -24,13 +24,18 @@ function Station({id, renderItineraryStations}) {
       setStationLongitude(data.alt_fuel_station.longitude)
     })
   },[])
+
+  const url = useLocation()
   
   const addToItinerary = () => {
     console.log("Add to itinerary")
-    //sends the stations ID up to app 
     const newItineraryStation = stationID
     console.log(newItineraryStation)
     renderItineraryStations(newItineraryStation)
+  }
+
+  const removeFromItinerary = () => {
+    deleteItineraryStation(stationID)
   }
 
   return(
@@ -39,7 +44,8 @@ function Station({id, renderItineraryStations}) {
       <p>{stationAdress}</p>
       <p>Connector Type(s): {stationConnectorTypes}</p>
       <p>Open: {stationOperationHours}</p>
-      <button onClick={addToItinerary}>Add Stop to Itinerary</button>
+      {url.pathname === "/map" ? <button onClick={addToItinerary}>Add Stop to Itinerary</button> : <button onClick={removeFromItinerary}>Remove from Itinerary</button>}
+      
     </div>
   )
 
