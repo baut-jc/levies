@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import './Map.scss'
-import Station from '../Station/Station.tsx'
+import Station from '../Station/Station'
 import {fetchData} from "../../fetchapis"
 
 
 export default function Map() {
-  const [stations, setStations] = useState([])
+  const [stations, setStations] = useState<string[]>([])
   
   useEffect(() => {
     fetchData().then(data => {
