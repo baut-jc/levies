@@ -3,12 +3,12 @@ import { fetchSingleStation } from "../../fetchapis"
 
 function Station() {
 
-  const [stationName, setStationName] = useState('')
-  const [stationAdress, setStationAdress] = useState('')
-  const [stationConnectorTypes, setStationConnectorTypes] = useState([])
-  const [stationOperationHours, setStationOperationHours] = useState('')
-  const [stationLatitude, setStationLatitude] = useState('')
-  const [stationLongitude, setStationLongitude] = useState('')
+  const [stationName, setStationName] = useState<string>('')
+  const [stationAdress, setStationAdress] = useState<string>('')
+  const [stationConnectorTypes, setStationConnectorTypes] = useState<string[]>([])
+  const [stationOperationHours, setStationOperationHours] = useState<string>('')
+  const [stationLatitude, setStationLatitude] = useState<string>('')
+  const [stationLongitude, setStationLongitude] = useState<string>('')
 
   useEffect(() => {
     //Currently hardcoding 

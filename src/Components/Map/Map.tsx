@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './Map.scss'
 import Station from '../Station/Station.tsx'
 import {fetchData} from "../../fetchapis"
+import Header from '../Header/Header.tsx'
 
 
 export default function Map() {
@@ -16,6 +17,7 @@ export default function Map() {
 
   return (
     <div className='station-map'>
+      <Header />
       <Station />
     </div>
   )
