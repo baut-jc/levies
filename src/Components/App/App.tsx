@@ -54,7 +54,7 @@ function App() {
           <Route path="/form" element={<Form/>}/>
           {/* <Route path="/:id" element={<Station/>}/> */}
           <Route path="/map" element={<Map renderItineraryStations={renderItineraryStations}/>}/>
-          <Route path="/stations" element={<Itinerary itineraryStations={itineraryStations} deleteItineraryStation={deleteItineraryStation}/>}/>
+          <Route path="/itinerary" element={<Itinerary itineraryStations={itineraryStations} deleteItineraryStation={deleteItineraryStation}/>}/>
         </Routes>
       {/* </Router> */}
     </main>
