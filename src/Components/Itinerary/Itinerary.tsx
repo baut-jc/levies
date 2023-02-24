@@ -9,6 +9,7 @@ function Itinerary({itineraryStations, deleteItineraryStation}) {
     id={stationID}
     key={stationID}
     deleteItineraryStation={deleteItineraryStation}
+    itineraryStations={itineraryStations}
     />
   })
 

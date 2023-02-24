@@ -6,7 +6,7 @@ import Header from '../Header/Header.tsx'
 
 
 
-export default function Map({renderItineraryStations}) {
+export default function Map({renderItineraryStations, deleteItineraryStation,itineraryStations}) {
   const [stations, setStations] = useState<string[]>([])
 
   useEffect(() => {
@@ -24,6 +24,8 @@ export default function Map({renderItineraryStations}) {
         id={station.id} 
         key={station.id}
         renderItineraryStations={renderItineraryStations}
+        deleteItineraryStation={deleteItineraryStation}
+        itineraryStations={itineraryStations}
         />
       )})
   

@@ -53,7 +53,10 @@ function App() {
           <Route path="/" element={<Splash/>}/>
           <Route path="/form" element={<Form/>}/>
           {/* <Route path="/:id" element={<Station/>}/> */}
-          <Route path="/map" element={<Map renderItineraryStations={renderItineraryStations}/>}/>
+          <Route path="/map" element={<Map renderItineraryStations={renderItineraryStations}
+          deleteItineraryStation={deleteItineraryStation}
+          itineraryStations={itineraryStations}
+          />}/>
           <Route path="/itinerary" element={<Itinerary itineraryStations={itineraryStations} deleteItineraryStation={deleteItineraryStation}/>}/>
         </Routes>
       {/* </Router> */}
