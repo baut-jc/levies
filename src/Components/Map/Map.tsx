@@ -8,20 +8,20 @@ import Header from '../Header/Header.tsx'
 
 
 export default function Map({renderItineraryStations}) {
+
   const location = useLocation()
-  const zipData = location.state?.data
   const [stations, setStations] = useState<string[]>([])
-  const [zip, setZip] = useState<string>('')
-
-  setZip(zipData)
-
+  
+  
   useEffect(() => {
-    fetchData(zip)
+    console.log(location)
+    fetchData(location)
     .then(data => {
+      console.log(data)
       const filteredStations = data['fuel_stations'].filter(station => station['access_code'] === 'public')
       setStations(filteredStations)
     })
-  }, [stations])
+  }, [location])
 
   const grabStationIds = 
     stations.map(station => {
