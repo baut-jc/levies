@@ -1,7 +1,7 @@
 //@ts-ignore
 import React, {useState} from "react"
 import "./Form.scss"
-import Header from "../Header/Header"
+import Header from "../Header/Header.tsx"
 import { Link } from "react-router-dom"
 
 
@@ -40,7 +40,7 @@ function Form(){
         <option value="TESLA">Tesla</option>
       </select>
       <label htmlFor="startPoint">Start Point</label>
-      <input name="startPoint" placeholder="Starting Zipcode" value={startPointInput} onChange={ event => setStartPointInput(event.target.value)}></input>
+      <input name="startPoint" placeholder="Enter US Zipcode " value={startPointInput} onChange={ event => setStartPointInput(event.target.value)}></input>
       <label htmlFor="endPoint">End Point</label>
       <input name="endPoint" placeholder="Ending Zipcode" value={endPointInput} onChange={ event => setEndPointInput(event.target.value)}></input>
       <label htmlFor="locations">Locations</label>
