@@ -7,8 +7,5 @@
     "types": ["cypress", "node"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
-  },
-  "files": [
-    "src/Components/App/App.tsx"
-  ]
+  }
 }
