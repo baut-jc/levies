@@ -12,6 +12,7 @@ import Form from "../Form/Form.tsx"
 import Splash from "../Splash/Splash.tsx"
 import Station from "../Station/Station.tsx"
 import Map from '../Map/Map.tsx'
+import Itinerary from '../Itinerary/Itinerary.tsx'
 
 
 
@@ -24,9 +25,21 @@ function App() {
   const [locations, setLocations] = useState<string[]>([])
   const [isSplashed, setIsSplashed] = useState<boolean>(false)
   const [stations, setStations] = useState<string[]>([])
+  const [itineraryStations, setItineraryStations] = useState<number[]>([])
 
   const renderInfo = () => {
     return <div></div>
+  }
+
+  const renderItineraryStations = newItineraryStations => {
+    setItineraryStations([...itineraryStations, newItineraryStations])
+  }
+
+  const deleteItineraryStation = id => {
+    console.log('delete runs')
+    const filteredItinerary = itineraryStations.filter(stationID => stationID != id)
+    console.log(filteredItinerary)
+    setItineraryStations(filteredItinerary)
   }
 
   useEffect(() => {
@@ -40,7 +53,8 @@ function App() {
           <Route path="/" element={<Splash/>}/>
           <Route path="/form" element={<Form/>}/>
           {/* <Route path="/:id" element={<Station/>}/> */}
-          <Route path="/map" element={<Map/>}/>
+          <Route path="/map" element={<Map renderItineraryStations={renderItineraryStations}/>}/>
+          <Route path="/stations" element={<Itinerary itineraryStations={itineraryStations} deleteItineraryStation={deleteItineraryStation}/>}/>
         </Routes>
       {/* </Router> */}
     </main>

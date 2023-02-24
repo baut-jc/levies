@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react"
+import { useLocation } from "react-router-dom"
 import { fetchSingleStation } from "../../fetchapis"
 
-function Station() {
+function Station({id, renderItineraryStations, deleteItineraryStation}) {
 
+
+  const [stationID, setStationID] = useState<number | null>(null)
   const [stationName, setStationName] = useState<string>('')
   const [stationAdress, setStationAdress] = useState<string>('')
   const [stationConnectorTypes, setStationConnectorTypes] = useState<string[]>([])
@@ -10,10 +13,11 @@ function Station() {
   const [stationLatitude, setStationLatitude] = useState<string>('')
   const [stationLongitude, setStationLongitude] = useState<string>('')
 
+
   useEffect(() => {
-    //Currently hardcoding 
-    fetchSingleStation(1583)
+    fetchSingleStation(id)
     .then(data=>{
+      setStationID(id)
       setStationName(data.alt_fuel_station.station_name)
       setStationAdress(data.alt_fuel_station.street_address)
       setStationConnectorTypes(data.alt_fuel_station.ev_connector_types)
@@ -22,9 +26,18 @@ function Station() {
       setStationLongitude(data.alt_fuel_station.longitude)
     })
   },[])
+
+  const url = useLocation()
   
   const addToItinerary = () => {
     console.log("Add to itinerary")
+    const newItineraryStation = stationID
+    console.log(newItineraryStation)
+    renderItineraryStations(newItineraryStation)
+  }
+
+  const removeFromItinerary = () => {
+    deleteItineraryStation(stationID)
   }
 
   return(
@@ -33,7 +46,8 @@ function Station() {
       <p>{stationAdress}</p>
       <p>Connector Type(s): {stationConnectorTypes}</p>
       <p>Open: {stationOperationHours}</p>
-      <button onClick={addToItinerary}>Add Stop to Itinerary</button>
+      {url.pathname === "/map" ? <button onClick={addToItinerary}>Add Stop to Itinerary</button> : <button onClick={removeFromItinerary}>Remove from Itinerary</button>}
+      
     </div>
   )
 
