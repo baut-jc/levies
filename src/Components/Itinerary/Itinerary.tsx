@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import Station from '../Station/Station.tsx'
+import Station from '../Station/Station'
 
 
 function Itinerary({itineraryStations, deleteItineraryStation}) {

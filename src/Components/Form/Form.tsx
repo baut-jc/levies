@@ -1,11 +1,11 @@
 //@ts-ignore
 import React, {useState} from "react"
 import "./Form.scss"
-import Header from "../Header/Header.tsx"
+import Header from "../Header/Header"
 import { Link } from "react-router-dom"
 
 
-function Form(){
+function Form({changeZipCodes}){
 
   const [chargerTypeInput, setChargerTypeInput] = useState('')
   const [startPointInput, setStartPointInput] = useState<string>('')
@@ -15,7 +15,7 @@ function Form(){
   const submitForm = event => {
     // event.preventDefault()
     console.log(startPointInput)
-
+    changeZipCodes([startPointInput])
     clearInputs()
   }
 
@@ -46,7 +46,7 @@ function Form(){
       <input name="endPoint" placeholder="Ending Zipcode" type='number'value={endPointInput} onChange={ event => setEndPointInput(event.target.value)}></input>
       {/* <label htmlFor="locations">Locations</label> */}
       {/* <input name="locations" placeholder="Zipcodes of Visiting Locations" value={locationsInput} onChange={ event => setLocationsInput(event.target.value)}></input> */}
-      <Link to='/map' state={{zip: startPointInput}} className='link'>
+      <Link to='/map' className='link'>
         <button onClick={submitForm}>Plan Trip</button>
       </Link>
     </form>

@@ -1,27 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import './Map.scss'
-import Station from '../Station/Station.tsx'
+import Station from '../Station/Station'
 import {fetchData} from "../../fetchapis"
-import Header from '../Header/Header.tsx'
+import Header from '../Header/Header'
 
 
 
-export default function Map({renderItineraryStations}) {
+export default function Map({renderItineraryStations,zipCodes}) {
 
-  const location = useLocation()
-  const [stations, setStations] = useState<string[]>([])
-  
+  const [stations, setStations] = useState<any[]>([])
   
   useEffect(() => {
-    console.log(location)
-    fetchData(location)
+    fetchData(zipCodes)
     .then(data => {
-      console.log(data)
+      // console.log(data)
       const filteredStations = data['fuel_stations'].filter(station => station['access_code'] === 'public')
       setStations(filteredStations)
     })
-  }, [location])
+  }, [stations])
 
   const grabStationIds = 
     stations.map(station => {
