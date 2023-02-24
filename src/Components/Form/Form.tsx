@@ -46,7 +46,7 @@ function Form(){
       <input name="endPoint" placeholder="Ending Zipcode" type='number'value={endPointInput} onChange={ event => setEndPointInput(event.target.value)}></input>
       {/* <label htmlFor="locations">Locations</label> */}
       {/* <input name="locations" placeholder="Zipcodes of Visiting Locations" value={locationsInput} onChange={ event => setLocationsInput(event.target.value)}></input> */}
-      <Link to='/map' className='link'>
+      <Link to='/map' state= {{zip: startPointInput}} className='link'>
         <button onClick={submitForm}>Plan Trip</button>
       </Link>
     </form>
