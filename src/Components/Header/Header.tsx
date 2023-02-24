@@ -15,7 +15,7 @@ const Header = () => {
             <h1 className='title'>L'EVies</h1>
             <Link to='/map' className='link'>MAP</Link>
             <Link to='/form' className='link'>FORM</Link>
-            <Link to='/stations' className='link'>STATIONS NEAR ME</Link>
+            <Link to='/itinerary' className='link'>ITINERARY</Link>
         </div>
     )
 }

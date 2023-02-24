@@ -1,5 +1,25 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 .station-map {
+  //   display: flex;
+  height: 15vh;
+  width: auto;
+}
+
+.stations {
+  display: flex;
   background: url(../../Assets/USMap.png);
   background-size: cover;
-  height: 100vh;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1em 20px 20px 20px;
+  width: fit-content;
+  height: auto;
+  border: green 2px solid;
+  // text-align: center;
 }

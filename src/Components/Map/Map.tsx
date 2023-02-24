@@ -20,17 +20,21 @@ export default function Map({renderItineraryStations}) {
   const grabStationIds = 
     stations.map(station => {
       return (
-        <Station 
-        id={station.id} 
-        key={station.id}
-        renderItineraryStations={renderItineraryStations}
-        />
+        <div className='stations'>
+            <Station 
+          id={station.id} 
+          key={station.id}
+          renderItineraryStations={renderItineraryStations}
+          />
+        </div>
       )})
   
   return (
     <div className='station-map'>
       <Header />
-      {grabStationIds}
+      <div className='stations'>
+        {grabStationIds}
+      </div>
     </div>
   )
 }
