@@ -28,7 +28,6 @@ function Form({changeZipCodes}){
 
   return (
     <>
-    <Header />
     <form>
       <label htmlFor="chargerType">Charger Type</label>
       <select name="chargerType" value={chargerTypeInput} onChange={ event => setChargerTypeInput(event.target.value)}>
