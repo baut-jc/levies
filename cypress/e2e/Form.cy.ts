@@ -9,6 +9,10 @@ describe('Form page', () => {
   })
 
   it('should display a header', () => {
+    cy.get('.home-icon')
+    cy.get('[href="/map"]').contains('MAP')
+    cy.get('[href="/form"]').contains('FORM')
+    cy.get('[href="/itinerary"]').contains('ITINERARY')
     
   })
   
