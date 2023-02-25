@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react"
 import "./App.scss"
 import {fetchData} from "../../fetchapis"
-import Header from "../Header/Header.tsx"
 import {
   BrowserRouter as Router,
   Routes,
   Route
   // Switch
 } from 'react-router-dom'
-import Form from "../Form/Form.tsx"
-import Splash from "../Splash/Splash.tsx"
-import Station from "../Station/Station.tsx"
-import Map from '../Map/Map.tsx'
-import Itinerary from '../Itinerary/Itinerary.tsx'
+import Form from "../Form/Form"
+import Splash from "../Splash/Splash"
+import Map from '../Map/Map'
+import Itinerary from '../Itinerary/Itinerary'
 
 
 
@@ -26,6 +24,7 @@ function App() {
   const [isSplashed, setIsSplashed] = useState<boolean>(false)
   const [stations, setStations] = useState<string[]>([])
   const [itineraryStations, setItineraryStations] = useState<number[]>([])
+  const [zipCodes, setZipCodes] = useState<number[]>([])
 
   const renderInfo = () => {
     return <div></div>
@@ -42,6 +41,10 @@ function App() {
     setItineraryStations(filteredItinerary)
   }
 
+  const changeZipCodes = newZipCodes => {
+    setZipCodes(newZipCodes)
+  }
+
   useEffect(() => {
     fetchData().then(data => console.log(data))
   }, [])
@@ -51,13 +54,26 @@ function App() {
       {/* <Router> */}
         <Routes>
           <Route path="/" element={<Splash/>}/>
-          <Route path="/form" element={<Form/>}/>
+          <Route path="/form" element={
+            <Form
+            changeZipCodes={changeZipCodes}
+            />}
+          />
           {/* <Route path="/:id" element={<Station/>}/> */}
-          <Route path="/map" element={<Map renderItineraryStations={renderItineraryStations}
-          deleteItineraryStation={deleteItineraryStation}
-          itineraryStations={itineraryStations}
-          />}/>
-          <Route path="/itinerary" element={<Itinerary itineraryStations={itineraryStations} deleteItineraryStation={deleteItineraryStation}/>}/>
+          <Route path="/map" element={
+            <Map 
+              renderItineraryStations={renderItineraryStations}
+              zipCodes={zipCodes}
+              deleteItineraryStation={deleteItineraryStation}
+              itineraryStations={itineraryStations}
+            />}
+          />
+          <Route path="/itinerary" element={
+            <Itinerary 
+              itineraryStations={itineraryStations}
+              deleteItineraryStation={deleteItineraryStation}
+            />
+          }/>
         </Routes>
       {/* </Router> */}
     </main>
