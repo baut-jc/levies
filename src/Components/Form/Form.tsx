@@ -65,8 +65,6 @@ function Form({changeZipCodes}){
         max='99950'
         value={endPointInput} 
         onChange={ event => setEndPointInput(event.target.value)}></input>
-      {/* <label htmlFor="locations">Locations</label> */}
-      {/* <input name="locations" placeholder="Zipcodes of Visiting Locations" value={locationsInput} onChange={ event => setLocationsInput(event.target.value)}></input> */}
     
       <input type='submit' value='Plan Trip'/>
     </form>
