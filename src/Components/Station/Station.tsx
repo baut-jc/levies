@@ -1,8 +1,16 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, FC } from "react"
 import { useLocation } from "react-router-dom"
 import { fetchSingleStation } from "../../fetchapis"
 
-function Station({id, renderItineraryStations, deleteItineraryStation}) {
+type StationProps = {
+  id: number,
+  key: number,
+  deleteItineraryStation?: any,
+  renderItineraryStations?: any,
+}
+
+
+const Station: FC<StationProps> = ({id, renderItineraryStations, deleteItineraryStation}) => {
 
 
   const [stationID, setStationID] = useState<number | null>(null)
