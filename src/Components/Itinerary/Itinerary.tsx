@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import Station from '../Station/Station'
-
+import Header from '../Header/Header'
 
 function Itinerary({itineraryStations, deleteItineraryStation}) {
   console.log(itineraryStations)
@@ -9,15 +9,16 @@ function Itinerary({itineraryStations, deleteItineraryStation}) {
     id={stationID}
     key={stationID}
     deleteItineraryStation={deleteItineraryStation}
+    itineraryStations={itineraryStations}
     />
   })
 
   return (
-    <div>
-      {displayItinerary}
-    </div>
+   <div className='itineraries'>
+     <Header/>
+     {displayItinerary.length > 0 ? displayItinerary : <p>Nothing Here... Check out the Map to add Stations!</p>}
+  </div>
   )
-
 }
 
 export default Itinerary

@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import './Map.scss'
-import Station from '../Station/Station'
+import Station from '../Station/Station.tsx'
 import {fetchData} from "../../fetchapis"
 import Header from '../Header/Header'
 
+export default function Map({renderItineraryStations,zipCodes,deleteItineraryStation,itineraryStations}) {
 
-
-export default function Map({renderItineraryStations,zipCodes}) {
 
   const [stations, setStations] = useState<any[]>([])
   
@@ -23,17 +22,23 @@ export default function Map({renderItineraryStations,zipCodes}) {
   const grabStationIds = 
     stations.map(station => {
       return (
+      <div className='stations'>
         <Station 
         id={station.id} 
         key={station.id}
         renderItineraryStations={renderItineraryStations}
+        deleteItineraryStation={deleteItineraryStation}
+        itineraryStations={itineraryStations}
         />
+       </div>
       )})
   
   return (
     <div className='station-map'>
       <Header />
-      {grabStationIds}
+      <div className='stations'>
+        {grabStationIds}
+      </div>
     </div>
   )
 }

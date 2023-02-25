@@ -54,14 +54,26 @@ function App() {
       {/* <Router> */}
         <Routes>
           <Route path="/" element={<Splash/>}/>
-          <Route path="/form" element={<Form
-          changeZipCodes={changeZipCodes}
-          />}/>
+          <Route path="/form" element={
+            <Form
+            changeZipCodes={changeZipCodes}
+            />}
+          />
           {/* <Route path="/:id" element={<Station/>}/> */}
-          <Route path="/map" element={<Map renderItineraryStations={renderItineraryStations}
-          zipCodes={zipCodes}
-          />}/>
-          <Route path="/stations" element={<Itinerary itineraryStations={itineraryStations} deleteItineraryStation={deleteItineraryStation}/>}/>
+          <Route path="/map" element={
+            <Map 
+              renderItineraryStations={renderItineraryStations}
+              zipCodes={zipCodes}
+              deleteItineraryStation={deleteItineraryStation}
+              itineraryStations={itineraryStations}
+            />}
+          />
+          <Route path="/itinerary" element={
+            <Itinerary 
+              itineraryStations={itineraryStations}
+              deleteItineraryStation={deleteItineraryStation}
+            />
+          }/>
         </Routes>
       {/* </Router> */}
     </main>

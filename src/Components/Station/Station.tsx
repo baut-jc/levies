@@ -7,11 +7,10 @@ type StationProps = {
   key: number,
   deleteItineraryStation?: any,
   renderItineraryStations?: any,
+  itineraryStations: number[],
 }
 
-
-const Station: FC<StationProps> = ({id, renderItineraryStations, deleteItineraryStation}) => {
-
+const Station: FC<StationProps> = ({id, renderItineraryStations, deleteItineraryStation, itineraryStations}) => {
 
   const [stationID, setStationID] = useState<number | null>(null)
   const [stationName, setStationName] = useState<string>('')
@@ -20,9 +19,14 @@ const Station: FC<StationProps> = ({id, renderItineraryStations, deleteItinerary
   const [stationOperationHours, setStationOperationHours] = useState<string>('')
   const [stationLatitude, setStationLatitude] = useState<string>('')
   const [stationLongitude, setStationLongitude] = useState<string>('')
-
+  const [inItinerary, setInItinerary] = useState<boolean>(false)
+  const [buttonText, setButtonText] = useState<string>('Add Stop to Itinerary')
 
   useEffect(() => {
+    if(itineraryStations.includes(id)){
+      setInItinerary(true)
+      setButtonText('Remove from Itinerary')
+    }
     fetchSingleStation(id)
     .then(data=>{
       setStationID(id)
@@ -38,10 +42,18 @@ const Station: FC<StationProps> = ({id, renderItineraryStations, deleteItinerary
   const url = useLocation()
   
   const addToItinerary = () => {
-    console.log("Add to itinerary")
-    const newItineraryStation = stationID
-    console.log(newItineraryStation)
-    renderItineraryStations(newItineraryStation)
+    if(!inItinerary){
+      console.log("Add to itinerary")
+      const newItineraryStation = stationID
+      console.log(newItineraryStation)
+      renderItineraryStations(newItineraryStation)
+      setInItinerary(true)
+      setButtonText('Remove from Itinerary')
+    } else {
+      deleteItineraryStation(stationID)
+      setInItinerary(false)
+      setButtonText('Add Stop to Itinerary')
+    }
   }
 
   const removeFromItinerary = () => {
@@ -49,13 +61,12 @@ const Station: FC<StationProps> = ({id, renderItineraryStations, deleteItinerary
   }
 
   return(
-    <div>
+    <div className='station-card'>
       <p>{stationName}</p>
       <p>{stationAdress}</p>
       <p>Connector Type(s): {stationConnectorTypes}</p>
       <p>Open: {stationOperationHours}</p>
-      {url.pathname === "/map" ? <button onClick={addToItinerary}>Add Stop to Itinerary</button> : <button onClick={removeFromItinerary}>Remove from Itinerary</button>}
-      
+      {url.pathname === "/map" ? <button onClick={addToItinerary}>{buttonText}</button> : <button onClick={removeFromItinerary}>Remove from Itinerary</button>}
     </div>
   )
 
