@@ -1,0 +1,178 @@
+{
+    "station_locator_url": "https://afdc.energy.gov/stations/",
+    "total_results": 5,
+    "station_counts": {
+        "total": 12,
+        "fuels": {
+            "BD": {
+                "total": 0
+            },
+            "E85": {
+                "total": 0
+            },
+            "ELEC": {
+                "total": 12,
+                "stations": {
+                    "total": 5
+                }
+            },
+            "HY": {
+                "total": 0
+            },
+            "LNG": {
+                "total": 0
+            },
+            "CNG": {
+                "total": 0
+            },
+            "LPG": {
+                "total": 0
+            },
+            "RD": {
+                "total": 0
+            }
+        }
+    },
+    "fuel_stations": [
+        {
+            "access_code": "public",
+            "access_days_time": "24 hours daily",
+            "access_detail_code": null,
+            "cards_accepted": null,
+            "date_last_confirmed": "2021-05-06",
+            "expected_date": null,
+            "fuel_type_code": "ELEC",
+            "groups_with_access_code": "Public",
+            "id": 63173,
+            "open_date": "2019-10-24",
+            "owner_type_code": "SG",
+            "status_code": "E",
+            "restricted_access": false,
+            "station_name": "Central Connecticut State University - Student Center Parking Garage",
+            "station_phone": "860-832-3068",
+            "updated_at": "2022-02-10T19:42:29Z",
+            "facility_type": "COLLEGE_CAMPUS",
+            "geocode_status": "GPS",
+            "latitude": 41.6938875513217,
+            "longitude": -72.7663278757019,
+            "city": "New Britain",
+            "intersection_directions": "Garage - Lower Level",
+            "plus4": null,
+            "state": "CT",
+            "street_address": "165 Ella Grasso Blvd",
+            "zip": "06053",
+            "country": "US",
+            "bd_blends": null,
+            "cng_dispenser_num": null,
+            "cng_fill_type_code": null,
+            "cng_psi": null,
+            "cng_renewable_source": null,
+            "cng_total_compression": null,
+            "cng_total_storage": null,
+            "cng_vehicle_class": null,
+            "e85_blender_pump": null,
+            "e85_other_ethanol_blends": null,
+            "ev_connector_types": [
+                "J1772"
+            ],
+            "ev_dc_fast_num": null,
+            "ev_level1_evse_num": null,
+            "ev_level2_evse_num": 3,
+            "ev_network": "Non-Networked",
+            "ev_network_web": null,
+            "ev_other_evse": null,
+            "ev_pricing": "Free",
+            "ev_renewable_source": null,
+            "hy_is_retail": null,
+            "hy_pressures": null,
+            "hy_standards": null,
+            "hy_status_link": null,
+            "lng_renewable_source": null,
+            "lng_vehicle_class": null,
+            "lpg_primary": null,
+            "lpg_nozzle_types": null,
+            "ng_fill_type_code": null,
+            "ng_psi": null,
+            "ng_vehicle_class": null,
+            "rd_blends": null,
+            "rd_blends_fr": null,
+            "rd_blended_with_biodiesel": null,
+            "rd_max_biodiesel_level": null,
+            "access_days_time_fr": null,
+            "intersection_directions_fr": null,
+            "bd_blends_fr": null,
+            "groups_with_access_code_fr": "Public",
+            "ev_pricing_fr": null
+        },
+        {
+            "access_code": "public",
+            "access_days_time": "24 hours daily",
+            "access_detail_code": null,
+            "cards_accepted": null,
+            "date_last_confirmed": "2021-05-06",
+            "expected_date": null,
+            "fuel_type_code": "ELEC",
+            "groups_with_access_code": "Public",
+            "id": 147208,
+            "open_date": "2019-10-24",
+            "owner_type_code": "SG",
+            "status_code": "E",
+            "restricted_access": false,
+            "station_name": "Central Connecticut State University - Sheridan Dorm Lot",
+            "station_phone": "860-832-3068",
+            "updated_at": "2022-02-10T19:42:29Z",
+            "facility_type": "COLLEGE_CAMPUS",
+            "geocode_status": "GPS",
+            "latitude": 41.692973,
+            "longitude": -72.762739,
+            "city": "New Britain",
+            "intersection_directions": "Surface Parking Lot",
+            "plus4": null,
+            "state": "CT",
+            "street_address": "65 Wells St",
+            "zip": "06053",
+            "country": "US",
+            "bd_blends": null,
+            "cng_dispenser_num": null,
+            "cng_fill_type_code": null,
+            "cng_psi": null,
+            "cng_renewable_source": null,
+            "cng_total_compression": null,
+            "cng_total_storage": null,
+            "cng_vehicle_class": null,
+            "e85_blender_pump": null,
+            "e85_other_ethanol_blends": null,
+            "ev_connector_types": [
+                "J1772"
+            ],
+            "ev_dc_fast_num": null,
+            "ev_level1_evse_num": null,
+            "ev_level2_evse_num": 1,
+            "ev_network": "Non-Networked",
+            "ev_network_web": null,
+            "ev_other_evse": null,
+            "ev_pricing": "Free",
+            "ev_renewable_source": null,
+            "hy_is_retail": null,
+            "hy_pressures": null,
+            "hy_standards": null,
+            "hy_status_link": null,
+            "lng_renewable_source": null,
+            "lng_vehicle_class": null,
+            "lpg_primary": null,
+            "lpg_nozzle_types": null,
+            "ng_fill_type_code": null,
+            "ng_psi": null,
+            "ng_vehicle_class": null,
+            "rd_blends": null,
+            "rd_blends_fr": null,
+            "rd_blended_with_biodiesel": null,
+            "rd_max_biodiesel_level": null,
+            "access_days_time_fr": null,
+            "intersection_directions_fr": null,
+            "bd_blends_fr": null,
+            "groups_with_access_code_fr": "Public",
+            "ev_pricing_fr": null
+        }
+    ]
+}
