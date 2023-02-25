@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import './Map.scss'
-import Station from '../Station/Station'
+import Station from '../Station/Station.tsx'
 import {fetchData} from "../../fetchapis"
 import Header from '../Header/Header.tsx'
 
 
 
-export default function Map({renderItineraryStations}) {
+export default function Map({renderItineraryStations, deleteItineraryStation,itineraryStations}) {
   const [stations, setStations] = useState<string[]>([])
 
   useEffect(() => {
@@ -20,13 +20,15 @@ export default function Map({renderItineraryStations}) {
   const grabStationIds = 
     stations.map(station => {
       return (
-        <div className='stations'>
-            <Station 
-          id={station.id} 
-          key={station.id}
-          renderItineraryStations={renderItineraryStations}
-          />
-        </div>
+      <div className='stations'>
+        <Station 
+        id={station.id} 
+        key={station.id}
+        renderItineraryStations={renderItineraryStations}
+        deleteItineraryStation={deleteItineraryStation}
+        itineraryStations={itineraryStations}
+        />
+       </div>
       )})
   
   return (

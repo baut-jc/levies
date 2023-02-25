@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import { fetchSingleStation } from "../../fetchapis"
 
-function Station({id, renderItineraryStations, deleteItineraryStation}) {
+function Station({id, renderItineraryStations, deleteItineraryStation, itineraryStations}) {
 
 
   const [stationID, setStationID] = useState<number | null>(null)
@@ -12,9 +12,14 @@ function Station({id, renderItineraryStations, deleteItineraryStation}) {
   const [stationOperationHours, setStationOperationHours] = useState<string>('')
   const [stationLatitude, setStationLatitude] = useState<string>('')
   const [stationLongitude, setStationLongitude] = useState<string>('')
-
+  const [inItinerary, setInItinerary] = useState<boolean>(false)
+  const [buttonText, setButtonText] = useState<string>('Add Stop to Itinerary')
 
   useEffect(() => {
+    if(itineraryStations.includes(id)){
+      setInItinerary(true)
+      setButtonText('Remove from Itinerary')
+    }
     fetchSingleStation(id)
     .then(data=>{
       setStationID(id)
@@ -30,10 +35,18 @@ function Station({id, renderItineraryStations, deleteItineraryStation}) {
   const url = useLocation()
   
   const addToItinerary = () => {
-    console.log("Add to itinerary")
-    const newItineraryStation = stationID
-    console.log(newItineraryStation)
-    renderItineraryStations(newItineraryStation)
+    if(!inItinerary){
+      console.log("Add to itinerary")
+      const newItineraryStation = stationID
+      console.log(newItineraryStation)
+      renderItineraryStations(newItineraryStation)
+      setInItinerary(true)
+      setButtonText('Remove from Itinerary')
+    } else {
+      deleteItineraryStation(stationID)
+      setInItinerary(false)
+      setButtonText('Add Stop to Itinerary')
+    }
   }
 
   const removeFromItinerary = () => {
@@ -46,7 +59,7 @@ function Station({id, renderItineraryStations, deleteItineraryStation}) {
       <p>{stationAdress}</p>
       <p>Connector Type(s): {stationConnectorTypes}</p>
       <p>Open: {stationOperationHours}</p>
-      {url.pathname === "/map" ? <button onClick={addToItinerary}>Add Stop to Itinerary</button> : <button onClick={removeFromItinerary}>Remove from Itinerary</button>}
+      {url.pathname === "/map" ? <button onClick={addToItinerary}>{buttonText}</button> : <button onClick={removeFromItinerary}>Remove from Itinerary</button>}
     </div>
   )
 
