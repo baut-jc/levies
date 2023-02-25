@@ -1,0 +1,191 @@
+{
+    "station_locator_url": "https://afdc.energy.gov/stations/",
+    "total_results": 4,
+    "station_counts": {
+      "total": 4,
+      "fuels": {
+        "BD": {
+          "total": 0
+        },
+        "E85": {
+          "total": 0
+        },
+        "ELEC": {
+          "total": 4,
+          "stations": {
+            "total": 4
+          }
+        },
+        "HY": {
+          "total": 0
+        },
+        "LNG": {
+          "total": 0
+        },
+        "CNG": {
+          "total": 0
+        },
+        "LPG": {
+          "total": 0
+        },
+        "RD": {
+          "total": 0
+        }
+      }
+    },
+    "fuel_stations": [
+      {
+        "access_code": "public",
+        "access_days_time": "24 hours daily",
+        "access_detail_code": null,
+        "cards_accepted": null,
+        "date_last_confirmed": "2023-02-24",
+        "expected_date": null,
+        "fuel_type_code": "ELEC",
+        "groups_with_access_code": "Public",
+        "id": 149791,
+        "open_date": "2019-12-07",
+        "owner_type_code": null,
+        "status_code": "E",
+        "restricted_access": null,
+        "station_name": "4373 S CENTRAL AVE",
+        "station_phone": "855-900-7584",
+        "updated_at": "2023-02-24T23:32:43Z",
+        "facility_type": null,
+        "geocode_status": "GPS",
+        "latitude": 34.004437,
+        "longitude": -118.256566,
+        "city": "Los Angeles",
+        "intersection_directions": null,
+        "plus4": null,
+        "state": "CA",
+        "street_address": "4373 S CENTRAL AVE",
+        "zip": "90011",
+        "country": "US",
+        "bd_blends": null,
+        "cng_dispenser_num": null,
+        "cng_fill_type_code": null,
+        "cng_psi": null,
+        "cng_renewable_source": null,
+        "cng_total_compression": null,
+        "cng_total_storage": null,
+        "cng_vehicle_class": null,
+        "e85_blender_pump": null,
+        "e85_other_ethanol_blends": null,
+        "ev_connector_types": [
+          "J1772"
+        ],
+        "ev_dc_fast_num": null,
+        "ev_level1_evse_num": null,
+        "ev_level2_evse_num": 1,
+        "ev_network": "SHELL_RECHARGE",
+        "ev_network_web": "https://shellrecharge.com/en-us/solutions",
+        "ev_other_evse": null,
+        "ev_pricing": null,
+        "ev_renewable_source": null,
+        "hy_is_retail": null,
+        "hy_pressures": null,
+        "hy_standards": null,
+        "hy_status_link": null,
+        "lng_renewable_source": null,
+        "lng_vehicle_class": null,
+        "lpg_primary": null,
+        "lpg_nozzle_types": null,
+        "ng_fill_type_code": null,
+        "ng_psi": null,
+        "ng_vehicle_class": null,
+        "rd_blends": null,
+        "rd_blends_fr": null,
+        "rd_blended_with_biodiesel": null,
+        "rd_max_biodiesel_level": null,
+        "access_days_time_fr": null,
+        "intersection_directions_fr": null,
+        "bd_blends_fr": null,
+        "groups_with_access_code_fr": "Public",
+        "ev_pricing_fr": null,
+        "ev_network_ids": {
+          "station": [
+            "1806"
+          ],
+          "posts": [
+            "12284A"
+          ]
+        }
+      },
+      {
+        "access_code": "public",
+        "access_days_time": "24 hours daily",
+        "access_detail_code": null,
+        "cards_accepted": null,
+        "date_last_confirmed": "2023-02-24",
+        "expected_date": null,
+        "fuel_type_code": "ELEC",
+        "groups_with_access_code": "Public",
+        "id": 154789,
+        "open_date": "2020-03-27",
+        "owner_type_code": null,
+        "status_code": "E",
+        "restricted_access": null,
+        "station_name": "948 E Vernon Ave",
+        "station_phone": "888-356-8911",
+        "updated_at": "2023-02-24T00:01:59Z",
+        "facility_type": null,
+        "geocode_status": "GPS",
+        "latitude": 34.00384309,
+        "longitude": -118.2590748,
+        "city": "Los Angeles",
+        "intersection_directions": null,
+        "plus4": null,
+        "state": "CA",
+        "street_address": "948 E Vernon Ave",
+        "zip": "90011",
+        "country": "US",
+        "bd_blends": null,
+        "cng_dispenser_num": null,
+        "cng_fill_type_code": null,
+        "cng_psi": null,
+        "cng_renewable_source": null,
+        "cng_total_compression": null,
+        "cng_total_storage": null,
+        "cng_vehicle_class": null,
+        "e85_blender_pump": null,
+        "e85_other_ethanol_blends": null,
+        "ev_connector_types": [
+          "J1772"
+        ],
+        "ev_dc_fast_num": null,
+        "ev_level1_evse_num": null,
+        "ev_level2_evse_num": 1,
+        "ev_network": "FLO",
+        "ev_network_web": "https://flo.ca/",
+        "ev_other_evse": null,
+        "ev_pricing": null,
+        "ev_renewable_source": null,
+        "hy_is_retail": null,
+        "hy_pressures": null,
+        "hy_standards": null,
+        "hy_status_link": null,
+        "lng_renewable_source": null,
+        "lng_vehicle_class": null,
+        "lpg_primary": null,
+        "lpg_nozzle_types": null,
+        "ng_fill_type_code": null,
+        "ng_psi": null,
+        "ng_vehicle_class": null,
+        "rd_blends": null,
+        "rd_blends_fr": null,
+        "rd_blended_with_biodiesel": null,
+        "rd_max_biodiesel_level": null,
+        "access_days_time_fr": null,
+        "intersection_directions_fr": null,
+        "bd_blends_fr": null,
+        "groups_with_access_code_fr": "Public",
+        "ev_pricing_fr": null,
+        "ev_network_ids": {
+          "posts": [
+            "AUI-10327"
+          ]
+        }
+      }
+    ]
+  }
