@@ -47,7 +47,7 @@ function Form({changeZipCodes}){
       {/* <label htmlFor="locations">Locations</label> */}
       {/* <input name="locations" placeholder="Zipcodes of Visiting Locations" value={locationsInput} onChange={ event => setLocationsInput(event.target.value)}></input> */}
       <Link to='/map' className='link'>
-        <button onClick={submitForm}>Plan Trip</button>
+        <button className='submit'onClick={submitForm}>Plan Trip</button>
       </Link>
     </form>
     </>

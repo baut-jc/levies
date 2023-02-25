@@ -45,7 +45,7 @@ describe('Form page', () => {
       method: 'GET',
       url: 'https://developer.nrel.gov/api/alt-fuel-stations/v1.json?fuel_type=ELEC&zip=06053&limit=10&access=public&api_key=Z6T9IALxddG6bZYlBZ4IncLhusz3nVjdGSzv9Iu4',
     }, { fixture: 'endPoint' })
-    cy.get('button').click()
+    cy.get('.submit').click()
     cy.url().should('eq','http://localhost:3000/map')
     //error handlers 
   })
