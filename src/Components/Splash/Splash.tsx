@@ -6,13 +6,11 @@ import './Splash.scss'
 export default function Splash() {
 
   return (
-    <main className='splash-page'>  
-      <div>
-        <img src={ WebLogo } className='web-logo' width='350px'/>
-        <Link to='/form' className='link'>
-          <button>Where's the Plug?</button>
-        </Link>
-      </div>        
-    </main>
+    <div className='splash-page'>
+      <img src={ WebLogo } className='web-logo' width='350px'/>
+      <Link to='/form' className='link'>
+        <button>Where's the Plug?</button>
+      </Link>
+    </div>        
   )
   }
