@@ -1,7 +1,7 @@
 //@ts-ignore
 import React, {useState} from "react"
 import "./Form.scss"
-import Header from "../Header/Header.tsx"
+import Header from "../Header/Header"
 import { Link } from "react-router-dom"
 
 
