@@ -41,13 +41,12 @@ function Station({id, renderItineraryStations, deleteItineraryStation}) {
   }
 
   return(
-    <div>
+    <div className='station-card'>
       <p>{stationName}</p>
       <p>{stationAdress}</p>
       <p>Connector Type(s): {stationConnectorTypes}</p>
       <p>Open: {stationOperationHours}</p>
       {url.pathname === "/map" ? <button onClick={addToItinerary}>Add Stop to Itinerary</button> : <button onClick={removeFromItinerary}>Remove from Itinerary</button>}
-      
     </div>
   )
 

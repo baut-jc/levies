@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import Station from '../Station/Station.tsx'
+import Header from '../Header/Header.tsx'
 
 
 function Itinerary({itineraryStations, deleteItineraryStation}) {
@@ -13,9 +14,12 @@ function Itinerary({itineraryStations, deleteItineraryStation}) {
   })
 
   return (
-    <div>
+  <div className='itinerary-display'>
+    <Header />
+    <div className='itineraries'>
       {displayItinerary}
     </div>
+  </div>
   )
 
 }
