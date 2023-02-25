@@ -7,6 +7,10 @@ describe('Form page', () => {
   it('should display a form', () => {
     cy.get('form').should('be.visible')
   })
+
+  it('should display a header', () => {
+    
+  })
   
   it('should select Charger Type', () => {
     cy.get('select').select(0).should('have.value', 'NEMA1450')
