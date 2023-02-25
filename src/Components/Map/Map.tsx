@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import './Map.scss'
-import Station from '../Station/Station.tsx'
+import Station from '../Station/Station'
 import {fetchData} from "../../fetchapis"
 import Header from '../Header/Header.tsx'
 
