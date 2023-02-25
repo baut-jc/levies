@@ -5,13 +5,16 @@ import Station from '../Station/Station'
 import {fetchData} from "../../fetchapis"
 import Header from '../Header/Header'
 
-export default function Map({renderItineraryStations,zipCodes,deleteItineraryStation,itineraryStations}) {
+export default function Map({renderItineraryStations,zipCodes,deleteItineraryStation,itineraryStations,chargerType}) {
 
 
   const [stations, setStations] = useState<any[]>([])
   
   useEffect(() => {
-    fetchData(zipCodes)
+    fetchData(zipCodes,chargerType)
+    .catch((error) => {
+      console.error(error.message)
+    })
     .then(data => {
       // console.log(data)
       const filteredStations = data['fuel_stations'].filter(station => station['access_code'] === 'public')
