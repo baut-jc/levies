@@ -14,12 +14,11 @@ function Itinerary({itineraryStations, deleteItineraryStation}) {
   })
 
   return (
-    <div>
-      <Header/>
-      {displayItinerary.length > 0 ? displayItinerary : <p>Nothing Here... Check out the Map to add Stations!</p>}
-    </div>
+   <div className='itineraries'>
+     <Header/>
+     {displayItinerary.length > 0 ? displayItinerary : <p>Nothing Here... Check out the Map to add Stations!</p>}
+  </div>
   )
-
 }
 
 export default Itinerary

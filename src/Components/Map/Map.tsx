@@ -20,6 +20,7 @@ export default function Map({renderItineraryStations, deleteItineraryStation,iti
   const grabStationIds = 
     stations.map(station => {
       return (
+      <div className='stations'>
         <Station 
         id={station.id} 
         key={station.id}
@@ -27,12 +28,15 @@ export default function Map({renderItineraryStations, deleteItineraryStation,iti
         deleteItineraryStation={deleteItineraryStation}
         itineraryStations={itineraryStations}
         />
+       </div>
       )})
   
   return (
     <div className='station-map'>
       <Header />
-      {grabStationIds}
+      <div className='stations'>
+        {grabStationIds}
+      </div>
     </div>
   )
 }

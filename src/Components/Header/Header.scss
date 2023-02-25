@@ -7,10 +7,13 @@
 
 .header {
     display: flex;
+    // flex-wrap: wrap;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 100%;
-    height: 10vh
+    width: 100vw;
+    height: auto;
+    background-color: azure;
+    border: orange solid 2px;
 }
 
 .link {
@@ -27,6 +30,6 @@
 .home-icon{
     margin-left: -20px;
     margin-top: -18px;
-    width: 100px;
+    width: 90%;
 }
 

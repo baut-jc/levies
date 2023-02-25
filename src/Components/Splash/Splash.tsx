@@ -8,7 +8,7 @@ export default function Splash() {
   return (
     <main className='splash-page'>  
       <div>
-        <img src={ WebLogo } className='web-logo'/>
+        <img src={ WebLogo } className='web-logo' width='350px'/>
         <Link to='/form' className='link'>
           <button>Where's the Plug?</button>
         </Link>
