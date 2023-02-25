@@ -1,15 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["es5", "dom"],
-<<<<<<< HEAD:tsconfig.json
+    "target": "es6",
+    "lib": ["es6", "dom"],
     "types": ["cypress", "node"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
-  }
-=======
-    "types": ["cypress", "node"]
   },
   "include": ["**/*.ts"]
->>>>>>> main:cypress/tsconfig.json
 }

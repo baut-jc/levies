@@ -23,13 +23,13 @@ describe('Form page', () => {
   }) 
 
   it('should take in US zip code for the starting point', () => {
-    cy.get('input').should('not.have.value')
-    cy.get('input').type('90011') //test for taken value
+    cy.get('[name="startPoint"]').should('not.have.value')
+    cy.get('[name="startPoint"]').type('90011') //test for taken value
   })
 
   it('should take in US zip code for endpoint', () => {
-    cy.get('input').should('not.have.value')
-    cy.get('input').type('06053')
+    cy.get('[name="endPoint"]').should('not.have.value')
+    cy.get('[name="endPoint"]').type('06053')
     //test for end point US ZIP code value
   })
   
