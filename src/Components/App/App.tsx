@@ -7,10 +7,10 @@ import {
   Route
   // Switch
 } from 'react-router-dom'
-import Form from "../Form/Form.tsx"
-import Splash from "../Splash/Splash.tsx"
-import Map from '../Map/Map.tsx'
-import Itinerary from '../Itinerary/Itinerary.tsx'
+import Form from "../Form/Form"
+import Splash from "../Splash/Splash"
+import Map from '../Map/Map'
+import Itinerary from '../Itinerary/Itinerary'
 
 
 

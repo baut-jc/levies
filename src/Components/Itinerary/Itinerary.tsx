@@ -1,6 +1,6 @@
 import React, {useState} from "react"
-import Station from '../Station/Station.tsx'
-import Header from '../Header/Header.tsx'
+import Station from '../Station/Station'
+import Header from '../Header/Header'
 
 function Itinerary({itineraryStations, deleteItineraryStation}) {
   console.log(itineraryStations)
