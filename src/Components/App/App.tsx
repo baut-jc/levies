@@ -7,11 +7,11 @@ import {
   Route
   // Switch
 } from 'react-router-dom'
-import Form from "../Form/Form"
-import Splash from "../Splash/Splash"
-import Map from '../Map/Map'
-import Itinerary from '../Itinerary/Itinerary'
-
+import Header from '../Header/Header.tsx'
+import Splash from "../Splash/Splash.tsx"
+import Form from "../Form/Form.tsx"
+import Map from '../Map/Map.tsx'
+import Itinerary from '../Itinerary/Itinerary.tsx'
 
 
 
@@ -51,31 +51,37 @@ function App() {
 
   return (
     <main className="App">
-      {/* <Router> */}
         <Routes>
           <Route path="/" element={<Splash/>}/>
           <Route path="/form" element={
-            <Form
-            changeZipCodes={changeZipCodes}
-            />}
-          />
-          {/* <Route path="/:id" element={<Station/>}/> */}
+            <div className='form-page'>
+              <Header />
+              <Form
+                changeZipCodes={changeZipCodes}
+              />
+            </div>
+          }/>
           <Route path="/map" element={
-            <Map 
-              renderItineraryStations={renderItineraryStations}
-              zipCodes={zipCodes}
-              deleteItineraryStation={deleteItineraryStation}
-              itineraryStations={itineraryStations}
-            />}
-          />
+            <div className='map-page'>
+              <Header />
+              <Map 
+                renderItineraryStations={renderItineraryStations}
+                zipCodes={zipCodes}
+                deleteItineraryStation={deleteItineraryStation}
+                itineraryStations={itineraryStations}
+              />
+            </div>
+          }/>
           <Route path="/itinerary" element={
-            <Itinerary 
-              itineraryStations={itineraryStations}
-              deleteItineraryStation={deleteItineraryStation}
-            />
+            <div>
+              <Header />
+              <Itinerary 
+                itineraryStations={itineraryStations}
+                deleteItineraryStation={deleteItineraryStation}
+              />
+            </div>
           }/>
         </Routes>
-      {/* </Router> */}
     </main>
   )
 }
