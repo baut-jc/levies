@@ -45,7 +45,6 @@ export default function Map({renderItineraryStations,chargerType,zipCodes,delete
     <>
     {networkErrorMap ? <Error/> : 
     (<div className='station-map'>
-        <Header />
         <div className='stations'>
           {grabStationIds}
         </div>
