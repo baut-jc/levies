@@ -1,7 +1,7 @@
 import React, { useEffect, useState, FC } from "react"
 import { useLocation } from "react-router-dom"
 import { fetchSingleStation } from "../../fetchapis"
-import Error from "../Error/Error"
+import Error from "../Error/Error.tsx"
 
 type StationProps = {
   id: number,
