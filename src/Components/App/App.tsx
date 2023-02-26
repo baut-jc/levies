@@ -24,7 +24,8 @@ function App() {
   const [isSplashed, setIsSplashed] = useState<boolean>(false)
   const [stations, setStations] = useState<string[]>([])
   const [itineraryStations, setItineraryStations] = useState<number[]>([])
-  const [zipCodes, setZipCodes] = useState<number[]>([])
+  const [zipCodes, setZipCodes] = useState<number[]>([]) 
+  const [chargerType, getChargerType] = useState<string[]>([])
 
   const renderInfo = () => {
     return <div></div>
@@ -45,9 +46,13 @@ function App() {
     setZipCodes(newZipCodes)
   }
 
-  useEffect(() => {
-    fetchData().then(data => console.log(data))
-  }, [])
+  const selectChargerType = chargerTypeValue => {
+    getChargerType(chargerTypeValue)
+  }
+
+  // useEffect(() => {
+  //   fetchData().then(data => console.log(data))
+  // }, [])
 
   return (
     <main className="App">
@@ -58,6 +63,7 @@ function App() {
               <Header />
               <Form
                 changeZipCodes={changeZipCodes}
+                selectChargerType={selectChargerType}
               />
             </div>
           }/>
@@ -66,6 +72,7 @@ function App() {
               <Header />
               <Map 
                 renderItineraryStations={renderItineraryStations}
+                chargerType={chargerType}
                 zipCodes={zipCodes}
                 deleteItineraryStation={deleteItineraryStation}
                 itineraryStations={itineraryStations}

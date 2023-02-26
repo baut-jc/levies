@@ -4,7 +4,7 @@ import "./Form.scss"
 import { Link, useNavigate } from "react-router-dom"
 
 
-function Form({changeZipCodes}){
+function Form({changeZipCodes, selectChargerType}){
 
   const [chargerTypeInput, setChargerTypeInput] = useState('')
   const [startPointInput, setStartPointInput] = useState<string>('')
@@ -16,6 +16,7 @@ function Form({changeZipCodes}){
     event.preventDefault()
     console.log(startPointInput)
     changeZipCodes(`${startPointInput}, ${endPointInput}`)
+    selectChargerType(`${chargerTypeInput}`)
     // changeZipCodes([endPointInput])
     clearInputs()
     navigate('/map')
