@@ -47,9 +47,9 @@ function App() {
     setZipCodes(newZipCodes)
   }
 
-  useEffect(() => {
-    fetchData().then(data => console.log(data))
-  }, [])
+  // useEffect(() => {
+  //   fetchData().then(data => console.log(data))
+  // }, [])
 
   return (
     <main className="App">
