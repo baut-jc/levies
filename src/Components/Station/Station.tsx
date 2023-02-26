@@ -23,6 +23,8 @@ const Station: FC<StationProps> = ({id, renderItineraryStations, deleteItinerary
   const [inItinerary, setInItinerary] = useState<boolean>(false)
   const [buttonText, setButtonText] = useState<string>('Add Stop to Itinerary')
   const [networkError, setNetworkError] = useState<boolean>(false)
+  const [stationZip, setStationZip] = useState<number | null>(null)
+  const [stationState, setStationState] = useState<string>('')
 
   useEffect(() => {
     if(itineraryStations.includes(id)){
@@ -42,6 +44,8 @@ const Station: FC<StationProps> = ({id, renderItineraryStations, deleteItinerary
       setStationOperationHours(data.alt_fuel_station.access_days_time)
       setStationLatitude(data.alt_fuel_station.latitude)
       setStationLongitude(data.alt_fuel_station.longitude)
+      setStationZip(data.alt_fuel_station.zip)
+      setStationState(data.alt_fuel_station.state)
     })
   },[])
 
@@ -71,7 +75,8 @@ const Station: FC<StationProps> = ({id, renderItineraryStations, deleteItinerary
     {networkError ? <Error/> : 
     (<div className='station-card'>
         <p>{stationName}</p>
-        <p>{stationAdress}</p>
+        <p>{stationState}</p>
+        <p>{stationAdress}, {stationZip}</p>
         <p>Connector Type(s): {stationConnectorTypes}</p>
         <p>Open: {stationOperationHours}</p>
         {url.pathname === "/map" ? <button onClick={addToItinerary}>{buttonText}</button> : <button onClick={removeFromItinerary}>Remove from Itinerary</button>}
