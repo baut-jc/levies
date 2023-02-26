@@ -1,6 +1,7 @@
 import React, { useEffect, useState, FC } from "react"
 import { useLocation } from "react-router-dom"
 import { fetchSingleStation } from "../../fetchapis"
+import Error from "../Error/Error"
 
 type StationProps = {
   id: number,
@@ -21,6 +22,9 @@ const Station: FC<StationProps> = ({id, renderItineraryStations, deleteItinerary
   const [stationLongitude, setStationLongitude] = useState<string>('')
   const [inItinerary, setInItinerary] = useState<boolean>(false)
   const [buttonText, setButtonText] = useState<string>('Add Stop to Itinerary')
+  const [networkError, setNetworkError] = useState<boolean>(false)
+  const [stationZip, setStationZip] = useState<number | null>(null)
+  const [stationState, setStationState] = useState<string>('')
 
   useEffect(() => {
     if(itineraryStations.includes(id)){
@@ -28,6 +32,10 @@ const Station: FC<StationProps> = ({id, renderItineraryStations, deleteItinerary
       setButtonText('Remove from Itinerary')
     }
     fetchSingleStation(id)
+    .catch((error) => {
+      console.error(error.message)
+      setNetworkError(true)
+    })
     .then(data=>{
       setStationID(id)
       setStationName(data.alt_fuel_station.station_name)
@@ -36,6 +44,8 @@ const Station: FC<StationProps> = ({id, renderItineraryStations, deleteItinerary
       setStationOperationHours(data.alt_fuel_station.access_days_time)
       setStationLatitude(data.alt_fuel_station.latitude)
       setStationLongitude(data.alt_fuel_station.longitude)
+      setStationZip(data.alt_fuel_station.zip)
+      setStationState(data.alt_fuel_station.state)
     })
   },[])
 
@@ -61,13 +71,17 @@ const Station: FC<StationProps> = ({id, renderItineraryStations, deleteItinerary
   }
 
   return(
-    <div className='station-card'>
-      <p>{stationName}</p>
-      <p>{stationAdress}</p>
-      <p>Connector Type(s): {stationConnectorTypes}</p>
-      <p>Open: {stationOperationHours}</p>
-      {url.pathname === "/map" ? <button onClick={addToItinerary}>{buttonText}</button> : <button onClick={removeFromItinerary}>Remove from Itinerary</button>}
-    </div>
+    <>
+    {networkError ? <Error/> : 
+    (<div className='station-card'>
+        <p>{stationName}</p>
+        <p>{stationState}</p>
+        <p>{stationAdress}, {stationZip}</p>
+        <p>Connector Type(s): {stationConnectorTypes}</p>
+        <p>Open: {stationOperationHours}</p>
+        {url.pathname === "/map" ? <button onClick={addToItinerary}>{buttonText}</button> : <button onClick={removeFromItinerary}>Remove from Itinerary</button>}
+      </div>)}
+    </>
   )
 
 }

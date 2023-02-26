@@ -2,6 +2,7 @@
 import React, {useState} from "react"
 import "./Form.scss"
 import { Link, useNavigate } from "react-router-dom"
+import Header from "../Header/Header"
 
 
 function Form({changeZipCodes, selectChargerType}){
@@ -66,7 +67,6 @@ function Form({changeZipCodes, selectChargerType}){
         max='99950'
         value={endPointInput} 
         onChange={ event => setEndPointInput(event.target.value)}></input>
-    
       <input type='submit' value='Plan Trip'/>
     </form>
     </>

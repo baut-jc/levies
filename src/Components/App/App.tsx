@@ -12,7 +12,7 @@ import Splash from "../Splash/Splash.tsx"
 import Form from "../Form/Form.tsx"
 import Map from '../Map/Map.tsx'
 import Itinerary from '../Itinerary/Itinerary.tsx'
-
+import Error from "../Error/Error"
 
 
 function App() {
@@ -49,7 +49,6 @@ function App() {
   const selectChargerType = chargerTypeValue => {
     getChargerType(chargerTypeValue)
   }
-
   // useEffect(() => {
   //   fetchData().then(data => console.log(data))
   // }, [])
@@ -88,6 +87,7 @@ function App() {
               />
             </div>
           }/>
+          <Route path="*" element={<Error/>}/>
         </Routes>
     </main>
   )
