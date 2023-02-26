@@ -7,13 +7,12 @@ import {
   Route
   // Switch
 } from 'react-router-dom'
-import Form from "../Form/Form"
-import Splash from "../Splash/Splash"
-import Map from '../Map/Map'
-import Itinerary from '../Itinerary/Itinerary'
+import Header from '../Header/Header.tsx'
+import Splash from "../Splash/Splash.tsx"
+import Form from "../Form/Form.tsx"
+import Map from '../Map/Map.tsx'
+import Itinerary from '../Itinerary/Itinerary.tsx'
 import Error from "../Error/Error"
-
-
 
 
 function App() {
@@ -25,8 +24,8 @@ function App() {
   const [isSplashed, setIsSplashed] = useState<boolean>(false)
   const [stations, setStations] = useState<string[]>([])
   const [itineraryStations, setItineraryStations] = useState<number[]>([])
-  const [zipCodes, setZipCodes] = useState<number[]>([])
-  const [chargerType,setChargerType] = useState<string>('')
+  const [zipCodes, setZipCodes] = useState<number[]>([]) 
+  const [chargerType, getChargerType] = useState<string[]>([])
 
   const renderInfo = () => {
     return <div></div>
@@ -47,39 +46,49 @@ function App() {
     setZipCodes(newZipCodes)
   }
 
+  const selectChargerType = chargerTypeValue => {
+    getChargerType(chargerTypeValue)
+  }
   // useEffect(() => {
   //   fetchData().then(data => console.log(data))
   // }, [])
 
   return (
     <main className="App">
-      {/* <Router> */}
         <Routes>
           <Route path="/" element={<Splash/>}/>
           <Route path="/form" element={
-            <Form
-            changeZipCodes={changeZipCodes}
-            />}
-          />
-          {/* <Route path="/:id" element={<Station/>}/> */}
+            <div className='form-page'>
+              <Header />
+              <Form
+                changeZipCodes={changeZipCodes}
+                selectChargerType={selectChargerType}
+              />
+            </div>
+          }/>
           <Route path="/map" element={
-            <Map 
-              renderItineraryStations={renderItineraryStations}
-              zipCodes={zipCodes}
-              deleteItineraryStation={deleteItineraryStation}
-              itineraryStations={itineraryStations}
-              chargerType={chargerType}
-            />}
-          />
+            <div className='map-page'>
+              <Header />
+              <Map 
+                renderItineraryStations={renderItineraryStations}
+                chargerType={chargerType}
+                zipCodes={zipCodes}
+                deleteItineraryStation={deleteItineraryStation}
+                itineraryStations={itineraryStations}
+              />
+            </div>
+          }/>
           <Route path="/itinerary" element={
-            <Itinerary 
-              itineraryStations={itineraryStations}
-              deleteItineraryStation={deleteItineraryStation}
-            />
+            <div>
+              <Header />
+              <Itinerary 
+                itineraryStations={itineraryStations}
+                deleteItineraryStation={deleteItineraryStation}
+              />
+            </div>
           }/>
           <Route path="*" element={<Error/>}/>
         </Routes>
-      {/* </Router> */}
     </main>
   )
 }

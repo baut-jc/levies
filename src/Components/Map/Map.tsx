@@ -3,10 +3,9 @@ import { useLocation } from "react-router-dom";
 import './Map.scss'
 import Station from '../Station/Station'
 import {fetchData} from "../../fetchapis"
-import Header from '../Header/Header'
+import Header from '../Header/Header.tsx'
+export default function Map({renderItineraryStations,chargerType,zipCodes,deleteItineraryStation,itineraryStations}) {
 import Error from "../Error/Error";
-
-export default function Map({renderItineraryStations,zipCodes,deleteItineraryStation,itineraryStations,chargerType}) {
 
 
   const [stations, setStations] = useState<any[]>([])
@@ -25,7 +24,8 @@ export default function Map({renderItineraryStations,zipCodes,deleteItinerarySta
       } 
     })
   }, [stations])
-
+  // console.log('YAY!', stations) 
+  
   const grabStationIds = 
     stations.map(station => {
       return (
@@ -41,6 +41,7 @@ export default function Map({renderItineraryStations,zipCodes,deleteItinerarySta
       )})
   
   return (
+
     <>
     {networkErrorMap ? <Error/> : 
     (<div className='station-map'>
