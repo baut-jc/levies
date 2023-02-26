@@ -11,6 +11,7 @@ import Form from "../Form/Form"
 import Splash from "../Splash/Splash"
 import Map from '../Map/Map'
 import Itinerary from '../Itinerary/Itinerary'
+import Error from "../Error/Error"
 
 
 
@@ -25,6 +26,7 @@ function App() {
   const [stations, setStations] = useState<string[]>([])
   const [itineraryStations, setItineraryStations] = useState<number[]>([])
   const [zipCodes, setZipCodes] = useState<number[]>([])
+  const [chargerType,setChargerType] = useState<string>('')
 
   const renderInfo = () => {
     return <div></div>
@@ -45,9 +47,9 @@ function App() {
     setZipCodes(newZipCodes)
   }
 
-  useEffect(() => {
-    fetchData().then(data => console.log(data))
-  }, [])
+  // useEffect(() => {
+  //   fetchData().then(data => console.log(data))
+  // }, [])
 
   return (
     <main className="App">
@@ -66,6 +68,7 @@ function App() {
               zipCodes={zipCodes}
               deleteItineraryStation={deleteItineraryStation}
               itineraryStations={itineraryStations}
+              chargerType={chargerType}
             />}
           />
           <Route path="/itinerary" element={
@@ -74,6 +77,7 @@ function App() {
               deleteItineraryStation={deleteItineraryStation}
             />
           }/>
+          <Route path="*" element={<Error/>}/>
         </Routes>
       {/* </Router> */}
     </main>
