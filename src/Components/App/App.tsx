@@ -12,7 +12,7 @@ import Splash from "../Splash/Splash.tsx"
 import Form from "../Form/Form.tsx"
 import Map from '../Map/Map.tsx'
 import Itinerary from '../Itinerary/Itinerary.tsx'
-import Error from "../Error/Error"
+import Error from "../Error/Error.tsx"
 
 
 function App() {
