@@ -11,19 +11,21 @@ export default function Map({renderItineraryStations,chargerType,zipCodes,delete
   const [stations, setStations] = useState<any[]>([])
   const [networkErrorMap,setNetworkErrorMap] = useState<boolean>(false)
   
-  useEffect(() => {
-    fetchData(zipCodes,chargerType)
-    .catch((error) => {
+  const fetchStations = async () => {
+    try {
+      const data = await fetchData(zipCodes,chargerType)
+      const filteredStations = data['fuel_stations'].filter(station => station['access_code'] === 'public')
+      setStations(filteredStations)
+      setNetworkErrorMap(false)
+    } catch (error) {
       console.error(error.message)
       setNetworkErrorMap(true)
-    })
-    .then(data => {
-      if(data){
-        const filteredStations = data['fuel_stations'].filter(station => station['access_code'] === 'public')
-        setStations(filteredStations)
-      } 
-    })
-  }, [stations])
+    }
+  }
+
+  useEffect(() => {
+    fetchStations()
+  }, [])
   
   const grabStationIds = 
     stations.map(station => {
@@ -50,5 +52,6 @@ export default function Map({renderItineraryStations,chargerType,zipCodes,delete
       </div>
       )} 
     </>)
-  
 }
+
+  
