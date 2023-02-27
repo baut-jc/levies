@@ -24,7 +24,6 @@ export default function Map({renderItineraryStations,chargerType,zipCodes,delete
       } 
     })
   }, [stations])
-  // console.log('YAY!', stations) 
   
   const grabStationIds = 
     stations.map(station => {

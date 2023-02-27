@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route
-  // Switch
 } from 'react-router-dom'
 import Header from '../Header/Header.tsx'
 import Splash from "../Splash/Splash.tsx"
@@ -49,9 +48,7 @@ function App() {
   const selectChargerType = chargerTypeValue => {
     getChargerType(chargerTypeValue)
   }
-  // useEffect(() => {
-  //   fetchData().then(data => console.log(data))
-  // }, [])
+
 
   return (
     <main className="App">

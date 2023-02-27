@@ -7,7 +7,6 @@ import HomeIcon from '../../Assets/banner.png'
 const Header = () => {
     return (
         <div className='header'>
-            {/* <div className='contain'> */}
             <Link to='/'>
                 <img src={HomeIcon} className='home-icon'></img>
             </Link>
