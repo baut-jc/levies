@@ -1,0 +1,178 @@
+{
+    "station_locator_url": "https://afdc.energy.gov/stations/",
+    "total_results": 5,
+    "station_counts": {
+        "total": 12,
+        "fuels": {
+            "BD": {
+                "total": 0
+            },
+            "E85": {
+                "total": 0
+            },
+            "ELEC": {
+                "total": 12,
+                "stations": {
+                    "total": 5
+                }
+            },
+            "HY": {
+                "total": 0
+            },
+            "LNG": {
+                "total": 0
+            },
+            "CNG": {
+                "total": 0
+            },
+            "LPG": {
+                "total": 0
+            },
+            "RD": {
+                "total": 0
+            }
+        }
+    },
+    "fuel_stations": [
+        {
+            "access_code": "public",
+            "access_days_time": "Dealership business hours",
+            "access_detail_code": "CALL",
+            "cards_accepted": null,
+            "date_last_confirmed": "2020-06-09",
+            "expected_date": null,
+            "fuel_type_code": "ELEC",
+            "groups_with_access_code": "Public - Call ahead",
+            "id": 45633,
+            "open_date": "2012-01-31",
+            "owner_type_code": "P",
+            "status_code": "E",
+            "restricted_access": false,
+            "station_name": "Don Franklin Nissan - Lexington",
+            "station_phone": "800-880-5020",
+            "updated_at": "2021-03-11T23:22:17Z",
+            "facility_type": "CAR_DEALER",
+            "geocode_status": "200-8",
+            "latitude": 37.997336,
+            "longitude": -84.441827,
+            "city": "Lexington",
+            "intersection_directions": null,
+            "plus4": null,
+            "state": "KY",
+            "street_address": "3360 Richmond Rd",
+            "zip": "40509",
+            "country": "US",
+            "bd_blends": null,
+            "cng_dispenser_num": null,
+            "cng_fill_type_code": null,
+            "cng_psi": null,
+            "cng_renewable_source": null,
+            "cng_total_compression": null,
+            "cng_total_storage": null,
+            "cng_vehicle_class": null,
+            "e85_blender_pump": null,
+            "e85_other_ethanol_blends": null,
+            "ev_connector_types": [
+                "J1772"
+            ],
+            "ev_dc_fast_num": null,
+            "ev_level1_evse_num": null,
+            "ev_level2_evse_num": 1,
+            "ev_network": "Non-Networked",
+            "ev_network_web": null,
+            "ev_other_evse": null,
+            "ev_pricing": null,
+            "ev_renewable_source": null,
+            "hy_is_retail": null,
+            "hy_pressures": null,
+            "hy_standards": null,
+            "hy_status_link": null,
+            "lng_renewable_source": null,
+            "lng_vehicle_class": null,
+            "lpg_primary": null,
+            "lpg_nozzle_types": null,
+            "ng_fill_type_code": null,
+            "ng_psi": null,
+            "ng_vehicle_class": null,
+            "rd_blends": null,
+            "rd_blends_fr": null,
+            "rd_blended_with_biodiesel": null,
+            "rd_max_biodiesel_level": null,
+            "access_days_time_fr": null,
+            "intersection_directions_fr": null,
+            "bd_blends_fr": null,
+            "groups_with_access_code_fr": "Public - Appeler à l'avance",
+            "ev_pricing_fr": null
+        },
+        {
+            "access_code": "public",
+            "access_days_time": "Dealership business hours",
+            "access_detail_code": null,
+            "cards_accepted": null,
+            "date_last_confirmed": "2020-06-09",
+            "expected_date": null,
+            "fuel_type_code": "ELEC",
+            "groups_with_access_code": "Public",
+            "id": 46851,
+            "open_date": "2012-01-31",
+            "owner_type_code": "P",
+            "status_code": "E",
+            "restricted_access": false,
+            "station_name": "Don Franklin Nissan - Lexington",
+            "station_phone": "800-880-5020",
+            "updated_at": "2021-03-11T23:22:17Z",
+            "facility_type": "CAR_DEALER",
+            "geocode_status": "200-8",
+            "latitude": 37.997336,
+            "longitude": -84.441827,
+            "city": "Lexington",
+            "intersection_directions": null,
+            "plus4": null,
+            "state": "KY",
+            "street_address": "3360 Richmond Rd",
+            "zip": "40509",
+            "country": "US",
+            "bd_blends": null,
+            "cng_dispenser_num": null,
+            "cng_fill_type_code": null,
+            "cng_psi": null,
+            "cng_renewable_source": null,
+            "cng_total_compression": null,
+            "cng_total_storage": null,
+            "cng_vehicle_class": null,
+            "e85_blender_pump": null,
+            "e85_other_ethanol_blends": null,
+            "ev_connector_types": [
+                "J1772"
+            ],
+            "ev_dc_fast_num": null,
+            "ev_level1_evse_num": null,
+            "ev_level2_evse_num": 1,
+            "ev_network": "Non-Networked",
+            "ev_network_web": null,
+            "ev_other_evse": null,
+            "ev_pricing": null,
+            "ev_renewable_source": null,
+            "hy_is_retail": null,
+            "hy_pressures": null,
+            "hy_standards": null,
+            "hy_status_link": null,
+            "lng_renewable_source": null,
+            "lng_vehicle_class": null,
+            "lpg_primary": null,
+            "lpg_nozzle_types": null,
+            "ng_fill_type_code": null,
+            "ng_psi": null,
+            "ng_vehicle_class": null,
+            "rd_blends": null,
+            "rd_blends_fr": null,
+            "rd_blended_with_biodiesel": null,
+            "rd_max_biodiesel_level": null,
+            "access_days_time_fr": null,
+            "intersection_directions_fr": null,
+            "bd_blends_fr": null,
+            "groups_with_access_code_fr": "Public",
+            "ev_pricing_fr": null
+        }
+    ]
+}
