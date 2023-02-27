@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import './Map.scss'
 import Station from '../Station/Station.tsx'
 import {fetchData} from "../../fetchapis"
-import Header from '../Header/Header.tsx'
 import Error from "../Error/Error.tsx";
 
 export default function Map({renderItineraryStations,chargerType,zipCodes,deleteItineraryStation,itineraryStations}) {
