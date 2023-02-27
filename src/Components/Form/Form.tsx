@@ -14,7 +14,6 @@ function Form({changeZipCodes, selectChargerType}){
 
   const submitForm = event => {
     event.preventDefault()
-    console.log(startPointInput)
     changeZipCodes(`${startPointInput}, ${endPointInput}`)
     selectChargerType(`${chargerTypeInput}`)
     clearInputs()

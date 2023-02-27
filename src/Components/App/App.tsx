@@ -35,9 +35,7 @@ function App() {
   }
 
   const deleteItineraryStation = id => {
-    console.log('delete runs')
     const filteredItinerary = itineraryStations.filter(stationID => stationID != id)
-    console.log(filteredItinerary)
     setItineraryStations(filteredItinerary)
   }
 
