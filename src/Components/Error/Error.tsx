@@ -6,7 +6,7 @@ function Error(){
   return (
     <section className="network-error">
       <p>Something has Gone Wrong...</p>
-      <Link to="/">
+      <Link to="/levies">
         <button>Go Home</button>
       </Link>
     </section>

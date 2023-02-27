@@ -3,7 +3,6 @@ import Station from '../Station/Station.tsx'
 import Header from '../Header/Header.tsx'
 
 function Itinerary({itineraryStations, deleteItineraryStation}) {
-  console.log(itineraryStations)
   const displayItinerary = itineraryStations.map(stationID => {
     return <Station 
     id={stationID}

@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import './Map.scss'
 import Station from '../Station/Station.tsx'
 import {fetchData} from "../../fetchapis"
-import Header from '../Header/Header.tsx'
 import Error from "../Error/Error.tsx";
 
 export default function Map({renderItineraryStations,chargerType,zipCodes,deleteItineraryStation,itineraryStations}) {
@@ -11,20 +10,21 @@ export default function Map({renderItineraryStations,chargerType,zipCodes,delete
   const [stations, setStations] = useState<any[]>([])
   const [networkErrorMap,setNetworkErrorMap] = useState<boolean>(false)
   
-  useEffect(() => {
-    fetchData(zipCodes,chargerType)
-    .catch((error) => {
+  const fetchStations = async () => {
+    try {
+      const data = await fetchData(zipCodes,chargerType)
+      const filteredStations = data['fuel_stations'].filter(station => station['access_code'] === 'public')
+      setStations(filteredStations)
+      setNetworkErrorMap(false)
+    } catch (error) {
       console.error(error.message)
       setNetworkErrorMap(true)
-    })
-    .then(data => {
-      if(data){
-        const filteredStations = data['fuel_stations'].filter(station => station['access_code'] === 'public')
-        setStations(filteredStations)
-      } 
-    })
-  }, [stations])
-  // console.log('YAY!', stations) 
+    }
+  }
+
+  useEffect(() => {
+    fetchStations()
+  }, [])
   
   const grabStationIds = 
     stations.map(station => {
@@ -51,5 +51,6 @@ export default function Map({renderItineraryStations,chargerType,zipCodes,delete
       </div>
       )} 
     </>)
-  
 }
+
+  

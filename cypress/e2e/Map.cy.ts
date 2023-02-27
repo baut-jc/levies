@@ -1,17 +1,39 @@
 describe('Map page', () => {
-    beforeEach(() => {
-        cy.visit('http://localhost:3000/map')
-        
-    it('should display stations based on start zip', () => {
+    it('should display the map when Plan Trip button is clicked', () => {
+        cy.visit('http://localhost:3000/form')
         cy.intercept({
-            method: 'GET',              
-            url: 'https://developer.nrel.gov/api/alt-fuel-stations/v1.json?fuel_type=ELEC&zip=87114,40509&limit=2&access=public&api_key=Z6T9IALxddG6bZYlBZ4IncLhusz3nVjdGSzv9Iu4'
-            }, { fixture: 'map.json' })
-        })
-        //cy.visit('http://localhost:3000/form')
-        //cy.get('[name="startPoint"]').type('87114')
-        cy.get('[name="endPoint"]').type('40509')
-        cy.get('button').click()
+            method: 'GET',
+            url: 'https://developer.nrel.gov/api/alt-fuel-stations/v1.json?fuel_type=ELEC&zip=90011&limit=10&access=public&api_key=Z6T9IALxddG6bZYlBZ4IncLhusz3nVjdGSzv9Iu4',
+        }, { fixture: 'startPoint' })
+        cy.intercept({
+            method: 'GET',
+            url: 'https://developer.nrel.gov/api/alt-fuel-stations/v1.json?fuel_type=ELEC&zip=06053&limit=10&access=public&api_key=Z6T9IALxddG6bZYlBZ4IncLhusz3nVjdGSzv9Iu4',
+        }, { fixture: 'endPoint' })
+        cy.get('[name="startPoint"]').type('90011')   
+        cy.wait(500) 
+        cy.get('[name="endPoint"]').type('06053')
+        cy.get('[type="submit"]').click()
+        cy.get(':nth-child(1) > .station-card > :nth-child(1)').contains('Central Connecticut State University')
+        
+    })
+
+    it('should be able to add to itinerary', () => {
+        cy.visit('http://localhost:3000/form')
+        cy.intercept({
+            method: 'GET',
+            url: 'https://developer.nrel.gov/api/alt-fuel-stations/v1.json?fuel_type=ELEC&zip=90011&limit=10&access=public&api_key=Z6T9IALxddG6bZYlBZ4IncLhusz3nVjdGSzv9Iu4',
+        }, { fixture: 'startPoint' })
+        cy.intercept({
+            method: 'GET',
+            url: 'https://developer.nrel.gov/api/alt-fuel-stations/v1.json?fuel_type=ELEC&zip=06053&limit=10&access=public&api_key=Z6T9IALxddG6bZYlBZ4IncLhusz3nVjdGSzv9Iu4',
+        }, { fixture: 'endPoint' })
+        cy.get('[name="startPoint"]').type('90011')   
+        cy.wait(500) 
+        cy.get('[name="endPoint"]').type('06053')
+        cy.get('[type="submit"]').click()
+        cy.get(':nth-child(1) > .station-card > :nth-child(1)').contains('Central Connecticut State University')
+        cy.get(':nth-child(1) > .station-card > button').click()
+        cy.get(':nth-child(1) > .station-card > button').contains('Remove')
         
     })
     

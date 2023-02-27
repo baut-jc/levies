@@ -2,7 +2,7 @@
 import React, {useState} from "react"
 import "./Form.scss"
 import { Link, useNavigate } from "react-router-dom"
-import Header from "../Header/Header"
+
 
 
 function Form({changeZipCodes, selectChargerType}){
@@ -10,17 +10,14 @@ function Form({changeZipCodes, selectChargerType}){
   const [chargerTypeInput, setChargerTypeInput] = useState('')
   const [startPointInput, setStartPointInput] = useState<string>('')
   const [endPointInput, setEndPointInput] = useState<string>('')
-  // const [locationsInput, setLocationsInput] = useState('')
   
 
   const submitForm = event => {
     event.preventDefault()
-    console.log(startPointInput)
     changeZipCodes(`${startPointInput}, ${endPointInput}`)
     selectChargerType(`${chargerTypeInput}`)
-    // changeZipCodes([endPointInput])
     clearInputs()
-    navigate('/map')
+    navigate('/levies/map')
   }
 
   const navigate = useNavigate()

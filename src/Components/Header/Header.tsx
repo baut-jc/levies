@@ -7,13 +7,12 @@ import HomeIcon from '../../Assets/banner.png'
 const Header = () => {
     return (
         <div className='header'>
-            {/* <div className='contain'> */}
-            <Link to='/'>
+            <Link to='/levies'>
                 <img src={HomeIcon} className='home-icon'></img>
             </Link>
-            <Link to='/map' className='link'>MAP</Link>
-            <Link to='/form' className='link'>FORM</Link>
-            <Link to='/itinerary' className='link'>ITINERARY</Link>
+            <Link to='/levies/map' className='link'>MAP</Link>
+            <Link to='/levies/form' className='link'>FORM</Link>
+            <Link to='/levies/itinerary' className='link'>ITINERARY</Link>
         </div>
     )
 }

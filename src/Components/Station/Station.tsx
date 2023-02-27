@@ -53,9 +53,7 @@ const Station: FC<StationProps> = ({id, renderItineraryStations, deleteItinerary
   
   const addToItinerary = () => {
     if(!inItinerary){
-      console.log("Add to itinerary")
       const newItineraryStation = stationID
-      console.log(newItineraryStation)
       renderItineraryStations(newItineraryStation)
       setInItinerary(true)
       setButtonText('Remove from Itinerary')
@@ -79,7 +77,7 @@ const Station: FC<StationProps> = ({id, renderItineraryStations, deleteItinerary
         <p>{stationAdress}, {stationZip}</p>
         <p>Connector Type(s): {stationConnectorTypes}</p>
         <p>Open: {stationOperationHours}</p>
-        {url.pathname === "/map" ? <button onClick={addToItinerary}>{buttonText}</button> : <button onClick={removeFromItinerary}>Remove from Itinerary</button>}
+        {url.pathname === "/levies/map" ? <button onClick={addToItinerary}>{buttonText}</button> : <button onClick={removeFromItinerary}>Remove from Itinerary</button>}
       </div>)}
     </>
   )
