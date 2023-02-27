@@ -10,15 +10,12 @@ function Form({changeZipCodes, selectChargerType}){
   const [chargerTypeInput, setChargerTypeInput] = useState('')
   const [startPointInput, setStartPointInput] = useState<string>('')
   const [endPointInput, setEndPointInput] = useState<string>('')
-  // const [locationsInput, setLocationsInput] = useState('')
   
 
   const submitForm = event => {
     event.preventDefault()
-    console.log(startPointInput)
     changeZipCodes(`${startPointInput}, ${endPointInput}`)
     selectChargerType(`${chargerTypeInput}`)
-    // changeZipCodes([endPointInput])
     clearInputs()
     navigate('/map')
   }

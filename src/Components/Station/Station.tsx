@@ -53,9 +53,7 @@ const Station: FC<StationProps> = ({id, renderItineraryStations, deleteItinerary
   
   const addToItinerary = () => {
     if(!inItinerary){
-      console.log("Add to itinerary")
       const newItineraryStation = stationID
-      console.log(newItineraryStation)
       renderItineraryStations(newItineraryStation)
       setInItinerary(true)
       setButtonText('Remove from Itinerary')
