@@ -51,8 +51,8 @@ function App() {
   return (
     <main className="App">
         <Routes>
-          <Route path="/" element={<Splash/>}/>
-          <Route path="/form" element={
+          <Route path="/levies" element={<Splash/>}/>
+          <Route path="/levies/form" element={
             <div className='form-page'>
               <Header />
               <Form
@@ -61,7 +61,7 @@ function App() {
               />
             </div>
           }/>
-          <Route path="/map" element={
+          <Route path="/levies/map" element={
             <div className='map-page'>
               <Header />
               <Map 
@@ -73,7 +73,7 @@ function App() {
               />
             </div>
           }/>
-          <Route path="/itinerary" element={
+          <Route path="/levies/itinerary" element={
             <div>
               <Header />
               <Itinerary 
