@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/levies/static/css/main.6e1333fe.css",
+    "main.css": "/levies/static/css/main.e9cffc6d.css",
     "main.js": "/levies/static/js/main.8a2696d8.js",
     "static/js/787.c262cfb9.chunk.js": "/levies/static/js/787.c262cfb9.chunk.js",
     "static/media/splash_background.jpeg": "/levies/static/media/splash_background.0e1385eee8acd574b24f.jpeg",
@@ -8,12 +8,12 @@
     "static/media/banner.png": "/levies/static/media/banner.e169318ecbb80fb8143f.png",
     "static/media/USMap.png": "/levies/static/media/USMap.1cb4830e7a7394f08a96.png",
     "index.html": "/levies/index.html",
-    "main.6e1333fe.css.map": "/levies/static/css/main.6e1333fe.css.map",
+    "main.e9cffc6d.css.map": "/levies/static/css/main.e9cffc6d.css.map",
     "main.8a2696d8.js.map": "/levies/static/js/main.8a2696d8.js.map",
     "787.c262cfb9.chunk.js.map": "/levies/static/js/787.c262cfb9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e1333fe.css",
+    "static/css/main.e9cffc6d.css",
     "static/js/main.8a2696d8.js"
   ]
 }
