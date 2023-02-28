@@ -3,23 +3,24 @@ body {
   flex-direction: column;
 }
 
-.station-map {
-  //   display: flex;
-  height: 15vh;
-  width: auto;
-}
-
 .stations {
   display: flex;
+  flex-wrap: wrap;
   background: url(../../Assets/USMap.png);
   background-size: cover;
-  flex-wrap: wrap;
+  background-position: fit-content;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   margin: 1em 20px 20px 20px;
   width: fit-content;
   height: auto;
-  border: green 2px solid;
-  // text-align: center;
+  border-radius: 10px;
+  border: darkblue solid 3px;
+  
+  .station-card {
+    background: linear-gradient(0deg,  rgba(101,193,212) 4%, rgba(222, 248, 248));
+    height: auto;
+    width: 25vw;
+  }
 }
