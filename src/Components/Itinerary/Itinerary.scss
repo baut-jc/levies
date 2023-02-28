@@ -1,0 +1,24 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.itineraries {
+  display: flex;
+  flex-wrap: wrap;
+  background-position: fit-content;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  
+  .station-card {
+    border: darkblue solid 3px;
+    align-items: center;
+    margin: 1em 20px 20px 20px;
+    background: linear-gradient(0deg,  rgba(101,193,212) 4%, rgba(222, 248, 248));
+    height: auto;
+    width: 25vw;
+  }
+}

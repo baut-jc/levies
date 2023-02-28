@@ -1,6 +1,7 @@
 import React, {useState} from "react"
-import Station from '../Station/Station.tsx'
-import Header from '../Header/Header.tsx'
+import Station from '../Station/Station'
+import Header from '../Header/Header'
+import './Itinerary.scss'
 
 function Itinerary({itineraryStations, deleteItineraryStation}) {
   const displayItinerary = itineraryStations.map(stationID => {
