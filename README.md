@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+![Screen Shot 2023-02-24 at 6 18 10 PM](https://user-images.githubusercontent.com/109314475/221728400-2affa339-b387-4ff2-a3e9-994af9986629.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# L'ËVies
+## [https://baut-jc.github.io/levies](https://baut-jc.github.io/levies)
+- The application is used to help EV drivers plan their trip. This will allow users to select the type of charger their vehicle will need. After the user have properly filled the _Form_, a page will display different _stations_ based on the given input the user gave. The user will be able to select stations that they can add to _itinerary_ 
 
-## Available Scripts
+## Abstract
+- The application is built within the time of the end of Week 3 and beginning of Week 5. It is built by 3 Front-End Developers of Turing in Mod 3. The goal for this project is to extend their knowledge with React using by incorporating a new language, _TypeScript_.
 
-In the project directory, you can run:
+### Built with
+* React
+* Typescript
+* Cypress
+* SassCSS
 
-### `npm start`
+### Contributors
+- Bob Aiken: [LinkedIn](https://www.linkedin.com/in/robertsiraaiken/) || [GitHub](https://github.com/BobAiken)
+- Jocelle Bautista: [LinkedIn](https://www.linkedin.com/in/jocelle-bautista/) || [GitHub](https://github.com/baut-jc)
+- Colin Ciervo: [LinkedIn](https://www.linkedin.com/in/colin-ciervo-8b085a1b6/) || [GitHub](https://github.com/Mrcolin99)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Future Extension (v2.0)
+- Responsive Routing map
+- Calculate trip distance
+- Local storage
+- User Login
